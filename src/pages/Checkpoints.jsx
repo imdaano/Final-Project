@@ -11,21 +11,21 @@ const Checkpoints = () => {
         dispatch(getCheckpoints('/'));
     }, []);
 
+    console.log(checkpoints);
+
 return (
     <div className="checkpoints">
          <h1>Checkpoints</h1>
         {isLoading && "Cargando"}
         {error && error.message}
-        {console.log(checkpoints)}
         {checkpoints && checkpoints.map((checkpoint) => {
             return (
-                <div>
+                <div key={checkpoint.name}>
                     <h2>{checkpoint.name}</h2>
                     <img src={checkpoint.img} alt={checkpoint.name} />
                 </div>
             )
         })}
-
     </div>
   )
 };
