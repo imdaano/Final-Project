@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path= '/' element={<Home />} />
         <Route path='/map' element={<MapView />} />
         <Route path='/checkpoints' element={<Checkpoints />} />
         <Route path='/checkpointDetails' element={<CheckpointDetails />} />
