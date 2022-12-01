@@ -1,6 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+
+import React from "react";
+import {Route, BrowserRouter, Routes } from "react-router-dom";
+
 import "./App.scss";
 import MapView from "./components/MapView";
+
 import Checkpoints from "./pages/Checkpoints";
 import Home from "./pages/Home";
 import CheckpointDetails from "./pages/CheckpointDetails";
@@ -16,6 +20,7 @@ import Books from "./pages/Books";
 
 function App() {
   return (
+
     <div className="App">
       <Routes>
         <Route path= '/' element={<Home />} />
