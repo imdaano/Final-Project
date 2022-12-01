@@ -18,18 +18,18 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/map' element={<MapView />}/>
-        <Route path='/checkpoints' element={<Checkpoints />}/>
-        <Route path='/checkpointDetails' element={<CheckpointDetails />}/>
-        <Route path='/favorites' element={<Favorites />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/myAccount' element={<MyAccount />}/>
-        <Route path='/newBook' element={<NewBook />}/>
-        <Route path='/myAccount' element={<NewCheckpoint />}/>
-        <Route path='/register' element={<Register />}/>
-        <Route path='/bookInfo' element={<BookInfo />}/>
-        <Route path='/books' element={<Books />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/map' element={<MapView />} />
+        <Route path='/checkpoints' element={<Checkpoints />} />
+        <Route path='/checkpointDetails' element={<CheckpointDetails />} />
+        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/myAccount' element={<MyAccount />} />
+        <Route path='/newBook' element={<NewBook />} />
+        <Route path='/myAccount' element={<NewCheckpoint />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/bookInfo' element={<BookInfo />} />
+        <Route path='/books' element={<Books />} />
       </Routes>
     </div>
   );
