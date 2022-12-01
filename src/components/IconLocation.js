@@ -11,5 +11,4 @@ const IconLocation = L.icon({
   className: "IconLocation",
 });
 
-
 export default IconLocation;

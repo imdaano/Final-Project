@@ -1,22 +1,17 @@
-import React from 'react';
-import {Marker} from 'react-leaflet';
-import IconLocation from './IconLocation';
+import React from "react";
+import { Marker } from "react-leaflet";
+import IconLocation from "./IconLocation";
 
-
-
-const Markers = ({place}) => {
-
+const Markers = ({ place }) => {
   return (
-    <Marker 
+    <Marker
       key={JSON.stringify(place)}
-      position={place.geometry} 
-      icon={IconLocation} 
+      position={place.geometry}
+      icon={IconLocation}
     />
-  )
+  );
 };
 
-
 export default Markers;
-
 
 // llega 1 lugar y pinta 1 marcador sucesivamente
