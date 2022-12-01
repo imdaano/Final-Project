@@ -30,16 +30,9 @@ const bookReducer = (state = INITIAL_STATE, action) => {
                 error: action.payload,
             };
 
-
-
-
-
-
         default:
             return state;
     }
-
-
 
 };
 export default bookReducer;
