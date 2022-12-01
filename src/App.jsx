@@ -1,10 +1,12 @@
 import "./App.scss";
-import MapView from "./components/MapView";
+// import MapView from "./components/MapView";
+import Checkpoints from "./pages/Checkpoints";
 
 function App() {
   return (
     <div className="App">
-      <MapView />
+      {/* <MapView /> */}
+      <Checkpoints />
     </div>
   );
 }
