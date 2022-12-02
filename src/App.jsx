@@ -1,12 +1,10 @@
 
-import React from "react";
-import {Route, BrowserRouter, Routes } from "react-router-dom";
-
 import "./App.scss";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import MapView from "./components/MapView";
-
 import Checkpoints from "./pages/Checkpoints";
-import Home from "./pages/Home";
+import Home from "./components/Home";
 import CheckpointDetails from "./pages/CheckpointDetails";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
@@ -16,6 +14,7 @@ import NewCheckpoint from "./pages/NewCheckpoint";
 import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
+import Navbar from "./components/Navbar";
 
 
 function App() {
@@ -23,10 +22,10 @@ function App() {
 
     <div className="App">
       <Routes>
-        <Route path= '/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/map' element={<MapView />} />
         <Route path='/checkpoints' element={<Checkpoints />} />
-        <Route path='/checkpoints/:name' element={<CheckpointDetails />} />
+        {/* <Route path='/checkpoints/:name' element={<CheckpointDetails />} /> */}
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/login' element={<Login />} />
         <Route path='/myAccount' element={<MyAccount />} />
@@ -36,6 +35,7 @@ function App() {
         <Route path='/bookInfo' element={<BookInfo />} />
         <Route path='/books' element={<Books />} />
       </Routes>
+      <Navbar />
     </div>
   );
 }

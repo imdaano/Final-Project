@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import ReusableButton from "../components/reusables/reusableButton/Button";
-import { getCheckpoints } from "../redux/checkpoint/checkpointFunctions";
+import ReusableButton from "../components/Button";
+import { getCheckpoints } from "../redux/checkpoint/checkpoint.functions";
 
 const Checkpoints = () => {
   const dispatch = useDispatch([]);
@@ -12,8 +12,6 @@ const Checkpoints = () => {
   useEffect(() => {
     dispatch(getCheckpoints("/"));
   }, []);
-
-  console.log(checkpoints);
 
   return (
     <div className="checkpoint--container">
@@ -42,7 +40,7 @@ const Checkpoints = () => {
         </div>
       </main>
       {/*NAVBAR*/}
-      </div>
+    </div>
   );
 };
 
