@@ -15,6 +15,8 @@ import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
 import Navbar from "./components/Navbar";
+import EditBook from "./pages/EditBook";
+import DeleteBook from "./pages/DeleteBook";
 // import Map from "./components/Map";
 
 
@@ -31,11 +33,13 @@ function App() {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/login' element={<Login />} />
         <Route path='/myAccount' element={<MyAccount />} />
-        <Route path='/newBook' element={<NewBook />} />
         <Route path='/myAccount' element={<NewCheckpoint />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/bookInfo' element={<BookInfo />} />
         <Route path='/books' element={<Books />} />
+        <Route path='/bookInfo' element={<BookInfo />} />
+        <Route path='/newBook' element={<NewBook />} />
+        <Route path="/editBook" element={<EditBook />}/>
+        <Route path="/deleteBook" element={<DeleteBook />}/>
       </Routes>
       <Navbar />
     </div>
