@@ -14,7 +14,7 @@ import NewCheckpoint from "./pages/NewCheckpoint";
 import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Map from "./components/Map";
 
 
@@ -37,7 +37,7 @@ function App() {
         <Route path='/bookInfo' element={<BookInfo />} />
         <Route path='/books' element={<Books />} />
       </Routes>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 }

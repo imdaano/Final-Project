@@ -11,7 +11,7 @@ const bookReducer = (state = INITIAL_STATE, action) => {
     case "gettingBooks":
       return { ...state, isLoading: true };
     case "getBooks":
-      return { ...state, isLoading: false, books: action.payload };
+      return { ...state, isLoading: false, books: [...action.payload] };
     case "errorBooks":
       return {
         ...state,
@@ -64,11 +64,11 @@ const bookReducer = (state = INITIAL_STATE, action) => {
     case "deletingBooks":
       return { ...state, isLoading: true };
 
-    case "deleteBooks":
+    case "deleteBook":
       return {
         ...state,
         isLoading: false,
-        books: action.payload,
+        books: [...action.payload],
         error: false,
       };
 
