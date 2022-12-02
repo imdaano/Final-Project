@@ -57,7 +57,7 @@ const checkpointReducer = (state = INITIAL_STATE, action) => {
           error: false,
         };
   
-      case "errorputCheckpoints":
+      case "errorPutCheckpoints":
         return { ...state, isLoading: false, checkpoints: [], error: action.payload };
   
       case "deletingCheckpoints":
