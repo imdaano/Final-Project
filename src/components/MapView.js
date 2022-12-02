@@ -2,46 +2,51 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Markers from "./Markers";
-import places from "../assets/data.json";
-import { useLocation } from "react-router-dom";
+import { getCheckpoints } from "../redux/checkpoint/checkpoint.functions";
+import { useDispatch, useSelector } from "react-redux";
 
 const MapView = () => {
-  const [state, setState] = useState({
-    currentLocation: { lat: "40.41696076697521", lng: "-3.703221486547788" }, // punto fijo al recargar
-    zoom: 13,  // zoom del mapa
-  });
-
-  const location = useLocation();
+  const [state, setState] = useState();
+  const dispatch = useDispatch();
+  const { checkpoints } = useSelector((state) => state.checkpoints);
 
   useEffect(() => {
-    console.log(location);
-    if(location.state.latitude && location.state.longitude){
-      const currentLocation = {
-        lat: location.state.latitude,
-        lng: location.state.longitude
-      }
-      setState({...state, currentLocation})
-      
-    }
+    dispatch (getCheckpoints())
+    
+    
+    navigator.geolocation.getCurrentPosition(
+      // objeto que nos da el navegador para acceder a métodos relacionados con el propio navegador (posicion, etc..)
+      function (position) {
+        //funcion para posicion OK
+        setState({
+          
+            location: { coordinates:[ position.coords.latitude, position.coords.longitude] }, // punto fijo al recargar
+            zoom: 13,  // zoom del mapa
+          
+        });
+      },
+      )
 
   }, [])
 
   return (
-    <MapContainer
-      center={state.currentLocation}
+    <>{state && <MapContainer
+      center={state.location.coordinates}
       zoom={
         state.zoom
       } /* center={{lat: '40.41696076697521', lng: '-3.703221486547788'}} zoom={12}*/
-    >
+    >{console.log(state)}
       <TileLayer
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" // openstreetmap nos proporciona el mapa
         attribution={`&copy; <a href="https://www.openstreetmap.org/copyright"> OpenStreetMap </a> contributors`} // agradecimiento
       />
-      {/* hacer map */}
-      {places.map((place, i) => {
-        return <Markers place={place} key={i} />;
+      {console.log(checkpoints)};
+      {checkpoints.map((checkpoint, i) => {
+        return <Markers place={checkpoint} key={i} />;
       })}
-    </MapContainer>
+      {state && <Markers place={state}/>}
+    </MapContainer>}
+    </>
   );
 };
 

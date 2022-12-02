@@ -1,10 +1,10 @@
 import { API, API2 } from "../../shared/services/api";
 
-export const getCheckpoints = (name) => async (dispatch) => {
+export const getCheckpoints = () => async (dispatch) => {
   dispatch({ type: "gettingACheckpoints" });
 
   try {
-    const result = await API.get("/checkpoints" + name);
+    const result = await API.get("/checkpoints");
     dispatch({ type: "getCheckpoints", payload: result.data });
   } catch (error) {
     dispatch({ type: "errorCheckpoints", payload: error.message });
