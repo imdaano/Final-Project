@@ -1,14 +1,14 @@
 import { API } from "../../shared/services/api";
 
-export const getCheckpoints = (name) => async(dispatch) => {
-    dispatch({type: 'gettingACheckpoints'})
+export const getCheckpoints = (name) => async (dispatch) => {
+  dispatch({ type: "gettingACheckpoints" });
 
-    try {
-        const result = await API.get('/checkpoints'+ name);
-        dispatch({type: 'getCheckpoints', payload: result.data})
-    } catch (error) {
-        dispatch({type: 'errorCheckpoints', payload: error.message})
-    }
+  try {
+    const result = await API.get("/checkpoints" + name);
+    dispatch({ type: "getCheckpoints", payload: result.data });
+  } catch (error) {
+    dispatch({ type: "errorCheckpoints", payload: error.message });
+  }
 };
 
 // export const filterCheckpoint = (name, checkpoints) => async(dispatch) =>{
@@ -20,4 +20,3 @@ export const getCheckpoints = (name) => async(dispatch) => {
 //         dispatch({type: 'errorCheckpoint', payload: error.message});
 //     }
 // }
-

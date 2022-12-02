@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Button.scss";
+import "./styles/Button.scss";
 
 const ReusableButton = ({ clase, click, text }) => {
   return (
@@ -12,8 +12,8 @@ const ReusableButton = ({ clase, click, text }) => {
 export default ReusableButton;
 
 //ejemplo reutilización botón para ver detalles
-{/* <ReusableButton
-  style={"logout--btn"}
-  click={getCheckpoint}
-  text={<Link to={`/checkpoints/${checkpoint.name}`}>Ver detalles</Link>}
-/>; */}
+// {/* <ReusableButton
+//   style={"logout--btn"}
+//   click={getCheckpoint}
+//   text={<Link to={`/checkpoints/${checkpoint.name}`}>Ver detalles</Link>}
+// />; */}
