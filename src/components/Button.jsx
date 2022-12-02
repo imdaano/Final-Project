@@ -12,8 +12,8 @@ const ReusableButton = ({ clase, click, text }) => {
 export default ReusableButton;
 
 //ejemplo reutilización botón para ver detalles
-// {/* <ReusableButton
-//   style={"logout--btn"}
-//   click={getCheckpoint}
-//   text={<Link to={`/checkpoints/${checkpoint.name}`}>Ver detalles</Link>}
-// />; */}
+{/* <ReusableButton
+  clase={"logout--btn"}
+  click={getCheckpoint}
+  text={<Link to={`/checkpoints/${checkpoint.name}`}>Ver detalles</Link>}
+/>; */}
