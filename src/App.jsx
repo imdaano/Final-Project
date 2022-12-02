@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
 import Navbar from "./components/Navbar";
+import Map from "./components/Map";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path="/coords" element={<Map />}/>
         <Route path='/map' element={<MapView />} />
         <Route path='/checkpoints' element={<Checkpoints />} />
         {/* <Route path='/checkpoints/:name' element={<CheckpointDetails />} /> */}
