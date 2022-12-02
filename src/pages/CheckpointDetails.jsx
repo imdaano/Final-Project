@@ -2,7 +2,7 @@ import React from 'react'
 
 const CheckpointDetails = () => {
   return (
-    <div>CheckpointDetails</div>
+    <h1>CheckpointDetails</h1>
   )
 }
 

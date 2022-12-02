@@ -26,7 +26,7 @@ function App() {
         <Route path= '/' element={<Home />} />
         <Route path='/map' element={<MapView />} />
         <Route path='/checkpoints' element={<Checkpoints />} />
-        <Route path='/checkpointDetails' element={<CheckpointDetails />} />
+        <Route path='/checkpoints/:name' element={<CheckpointDetails />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/login' element={<Login />} />
         <Route path='/myAccount' element={<MyAccount />} />
