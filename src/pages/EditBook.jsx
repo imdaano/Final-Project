@@ -13,9 +13,8 @@ const EditBook = () => {
 	const dispatch = useDispatch();
 	const { books, error, isLoading } = useSelector((state) => state.books);
 
-	const editbook = (formdata) => {
+	const editBook = (formdata) => {
 		formdata.img = formdata.img[0];
-
 		putBook(formdata, books, dispatch);
 	};
 
@@ -25,7 +24,7 @@ const EditBook = () => {
 				{error && <h2 className="error">{error}</h2>}
 				{isLoading && <h2 className="loading">Editing book...</h2>}
 				<h1>Edit Book</h1>
-				<form onSubmit={handleSubmit(editbook)}>
+				<form onSubmit={handleSubmit(editBook)}>
 					<select name="_id" {...register("_id")}>
 						{books.map((book) => (
 							<option key={JSON.stringify(book)} value={book._id}>
@@ -39,7 +38,7 @@ const EditBook = () => {
 							type="title"
 							name="title"
 							{...register("title", {
-								required: "Introduce an title",
+								required: "Introduce a title",
 							})}
 						/>
 					</label>
@@ -61,7 +60,7 @@ const EditBook = () => {
 					</label>
 					<label>
 						<p>Genre</p>
-						<input type="number" name="genre" {...register("genre")} />
+						<input type="text" name="genre" {...register("genre")} />
 					</label>
 					<label>
 						<p>Synopsis</p>
