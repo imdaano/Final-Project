@@ -1,11 +1,12 @@
 import { API, API2 } from "../../shared/services/api";
 
-export const getBooks = (title) => async (dispatch) => {
+export const getBooks = () => async (dispatch) => {
   dispatch({ type: "gettingBooks" });
 
   try {
-    const result = await API.get("/books" + title);
-    dispatch({ type: "getBooks", payload: result.data });
+    const res = await API.get("/books");
+    res.data.map((book) => (book.inFavorites= false))
+    dispatch({ type: "getBooks", payload: res.data });
   } catch (error) {
     dispatch({ type: "errorBooks", payload: error.message });
   }

@@ -55,14 +55,14 @@ const NewBook = () => {
 					</label>
 					<label>
 						<p>Genre</p>
-						<input type="number" name="genre" {...register("genre")} />
+						<input type="text" name="genre" {...register("genre")} />
 					</label>
 					<label>
 						<p>Synopsis</p>
 						<input type="text" name="synopsis" {...register("synopsis")} />
 					</label>
 					<ReusableButton
-						text="Add"
+						text={"Add"}
 					/>
 				</form>
 			</div>
