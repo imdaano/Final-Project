@@ -1,10 +1,11 @@
 import React from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { Link } from "react-router-dom";
+import './styles/Home.scss';
 
 const Home = () => {
   return (
-    <div>
+    <div className="home--container">
       <ReusableButton
         clase={"button--books"}
         text={<Link to="/books">Books</Link>}

@@ -14,7 +14,7 @@ const Books = () => {
     <div className="books--container">
       <main>
         <div className="books">
-          <h1>Checkpoints</h1>
+          <h1>Books</h1>
           {isLoading && "Cargando"}
           {error && error.message}
           {books &&

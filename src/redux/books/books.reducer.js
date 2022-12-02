@@ -30,13 +30,13 @@ const bookReducer = (state = INITIAL_STATE, action) => {
         book: {},
         error: action.payload,
       };
-    case "searchBooks":
+    case "searchBook": //falta funcion search en books.functions.js
       return { ...state, search: action.payload, error: false };
 
-    case "postingBooks":
+    case "postingBook":
       return { ...state, isLoading: true };
 
-    case "postBooks":
+    case "postBook":
       return {
         ...state,
         isLoading: false,
@@ -44,13 +44,13 @@ const bookReducer = (state = INITIAL_STATE, action) => {
         error: false,
       };
 
-    case "errorPostBooks":
+    case "errorPostBook":
       return { ...state, isLoading: false, books: [], error: action.payload };
 
-    case "puttingBooks":
+    case "puttingBook":
       return { ...state, isLoading: true };
 
-    case "putBooks":
+    case "putBook":
       return {
         ...state,
         isLoading: false,
@@ -58,10 +58,10 @@ const bookReducer = (state = INITIAL_STATE, action) => {
         error: false,
       };
 
-    case "errorPutBooks":
+    case "errorPutBook":
       return { ...state, isLoading: false, books: [], error: action.payload };
 
-    case "deletingBooks":
+    case "deletingBook":
       return { ...state, isLoading: true };
 
     case "deleteBook":
@@ -72,7 +72,7 @@ const bookReducer = (state = INITIAL_STATE, action) => {
         error: false,
       };
 
-    case "errorDeleteBooks":
+    case "errorDeleteBook":
       return { ...state, isLoading: false, books: [], error: action.payload };
 
     default:

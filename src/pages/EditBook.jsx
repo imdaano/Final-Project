@@ -1,11 +1,10 @@
-import './styles/NewBook.scss';
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { postBook } from "../redux/books/books.functions";
-import ReusableButton from '../components/Button';
+import ReusableButton from "../components/Button";
+import { putBook } from "../redux/books/books.functions";
 
-const NewBook = () => {
+const EditBook = () => {
 	const {
 		register,
 		handleSubmit,
@@ -14,26 +13,32 @@ const NewBook = () => {
 	const dispatch = useDispatch();
 	const { books, error, isLoading } = useSelector((state) => state.books);
 
-	const newBook = (formdata) => {
+	const editBook = (formdata) => {
 		formdata.img = formdata.img[0];
-
-		postBook(formdata, books, dispatch);
+		putBook(formdata, books, dispatch);
 	};
 
 	return (
-		<div className="newbook">
+		<div className="editbook">
 			<div>
 				{error && <h2 className="error">{error}</h2>}
-				{isLoading && <h2 className="loading">Adding book...</h2>}
-				<h1>Add Book</h1>
-				<form onSubmit={handleSubmit(newBook)}>
+				{isLoading && <h2 className="loading">Editing book...</h2>}
+				<h1>Edit Book</h1>
+				<form onSubmit={handleSubmit(editBook)}>
+					<select name="_id" {...register("_id")}>
+						{books.map((book) => (
+							<option key={JSON.stringify(book)} value={book._id}>
+								{book.title}
+							</option>
+						))}
+					</select>
 					<label>
 						<p>Title</p>
 						<input
 							type="title"
 							name="title"
 							{...register("title", {
-								required: "Introduce an title",
+								required: "Introduce a title",
 							})}
 						/>
 					</label>
@@ -62,11 +67,12 @@ const NewBook = () => {
 						<input type="text" name="synopsis" {...register("synopsis")} />
 					</label>
 					<ReusableButton
-						text={"Add"}
+						text="Edit"
 					/>
 				</form>
 			</div>
 		</div>
 	);
 };
-export default NewBook;
+
+export default EditBook;

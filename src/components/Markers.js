@@ -6,7 +6,7 @@ const Markers = ({ place }) => {
   return (
     <Marker
       key={JSON.stringify(place)}
-      position={place.geometry}
+      position={place.location.coordinates}
       icon={IconLocation}
     />
   );
