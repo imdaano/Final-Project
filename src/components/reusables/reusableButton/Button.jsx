@@ -1,9 +1,9 @@
 import React from "react";
-import "./Button.scss";
+import "../../styles/Button.scss";
 
-const ReusableButton = ({ style, click, text }) => {
+const ReusableButton = ({ clase, click, text }) => {
   return (
-    <button className={style} onClick={click}>
+    <button className={clase} onClick={click}>
       {text}
     </button>
   );
