@@ -12,19 +12,19 @@ export const getBooks = (title) => async (dispatch) => {
 };
 
 export const postBook = async (formdata, books, dispatch) => {
-  dispatch({ type: "postingBooks" });
+  dispatch({ type: "postingBook" });
   try {
     const res = await API2.post("/books/create", formdata);
     res.data.inFavorites = false;
     books.push(res.data);
-    dispatch({ type: "postBooks", payload: books });
+    dispatch({ type: "postBook", payload: books });
   } catch (error) {
-    dispatch({ type: "errorPostBooks", payload: error.response.data });
+    dispatch({ type: "errorPostBook", payload: error.response.data });
   }
 };
 
 export const putBook = async (formdata, books, dispatch) => {
-  dispatch({ type: "puttingBooks" });
+  dispatch({ type: "puttingBook" });
   try {
     await API2.put(`/books/edit/${formdata._id}`, formdata);
     const res = await API.get(`/books/id{formdata._id}`);
@@ -44,14 +44,14 @@ export const putBook = async (formdata, books, dispatch) => {
           : book
       );
     });
-    dispatch({ type: "putBooks", payload: newBooks });
+    dispatch({ type: "putBook", payload: newBooks });
   } catch (error) {
-    dispatch({ type: "errorPutBooks", payload: error.response.data });
+    dispatch({ type: "errorPutBook", payload: error.response.data });
   }
 };
 
 export const deleteBook = async (formdata, books, dispatch) => {
-  dispatch({ type: "deletingBooks" });
+  dispatch({ type: "deletingBook" });
   try {
     await API2.delete(`/books/delete/${formdata._id}`);
     const newBooks = [];
@@ -60,8 +60,8 @@ export const deleteBook = async (formdata, books, dispatch) => {
         newBooks.push(book);
       }
     });
-    dispatch({ type: "deleteBooks", payload: newBooks });
+    dispatch({ type: "deleteBook", payload: newBooks });
   } catch (error) {
-    dispatch({ type: "errorDeleteBooks", payload: error.response.data });
+    dispatch({ type: "errorDeleteBook", payload: error.response.data });
   }
 };
