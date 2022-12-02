@@ -6,7 +6,7 @@ import "./App.scss";
 import MapView from "./components/MapView";
 
 import Checkpoints from "./pages/Checkpoints";
-import Home from "./pages/Home";
+import Home from "./components/Home";
 import CheckpointDetails from "./pages/CheckpointDetails";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
