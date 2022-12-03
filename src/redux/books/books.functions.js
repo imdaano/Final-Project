@@ -12,6 +12,17 @@ export const getBooks = () => async (dispatch) => {
   }
 };
 
+export const getOneBook = (title, books) => async (dispatch) => {
+  dispatch({ type: "gettingBook" });
+
+  try {
+    const bookInfo = books.filter((book) => book.title === title);
+    dispatch({ type: "getBook", payload: bookInfo[0] });
+  } catch (error) {
+    dispatch({ type: "errorBook", payload: error.message });
+  }
+};
+
 export const postNewBook = (dataForm) => async (dispatch) => {
   dispatch({ type: "postingBook" });
   try {

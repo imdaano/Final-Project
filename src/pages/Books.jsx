@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
+<<<<<<< HEAD
 import { deleteBook, getBooks } from "../redux/books/books.functions";
 import './styles/Books.scss'
+=======
+import { getBooks } from "../redux/books/books.functions";
+
+>>>>>>> 228d733fafad31aa297b07530d9a791b65bbb978
 const Books = () => {
   const dispatch = useDispatch();
   const { books, isLoading, error } = useSelector((state) => state.books);
@@ -15,7 +20,7 @@ const Books = () => {
       <main>
         <div className="books">
           <h1>Books</h1>
-          {isLoading && "Cargando"}
+          {isLoading && (<img src="../../public/assetsFront/images/book-90.gif" alt="loading"/>)}
           {error && error.message}
           {books &&
             books.map((book) => {
@@ -23,10 +28,13 @@ const Books = () => {
                 <div className="book_card" key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
+<<<<<<< HEAD
                   
                   <ReusableButton 
                   click={() => dispatch(deleteBook(book._id, dispatch))}
                   text={"Eliminar"}/>
+=======
+>>>>>>> 228d733fafad31aa297b07530d9a791b65bbb978
                   {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}
                   <ReusableButton
                     clase={"book--btn"}
@@ -34,7 +42,7 @@ const Books = () => {
                   />
                 </div>
               );
-            })}
+            })};
         </div>
       </main>
     </div>
