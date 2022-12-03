@@ -33,7 +33,7 @@ const Books = () => {
                   />
                 </div>
               );
-            })}
+            })};
         </div>
       </main>
     </div>
