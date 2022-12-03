@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import MapView from "./components/MapView";
 import Checkpoints from "./pages/Checkpoints";
 import Home from "./pages/Home";
-// import CheckpointDetails from "./pages/CheckpointDetails";
+import CheckpointDetails from "./pages/CheckpointDetails";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import MyAccount from "./pages/MyAccount";
@@ -27,7 +27,7 @@ function App() {
         {/* <Route path="/coords" element={<Map />}/> */}
         <Route path='/map' element={<MapView />} />
         <Route path='/checkpoints' element={<Checkpoints />} />
-        {/* <Route path='/checkpoints/:name' element={<CheckpointDetails />} /> */}
+        <Route path='/checkpoints/:name' element={<CheckpointDetails />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/login' element={<Login />} />
         <Route path='/myAccount' element={<MyAccount />} />
