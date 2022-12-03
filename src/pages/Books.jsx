@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { getBooks } from "../redux/books/books.functions";
+import { deleteBook, getBooks } from "../redux/books/books.functions";
+import './styles/Books.scss'
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Books = () => {
           {books &&
             books.map((book) => {
               return (
-                <div key={book.title}>
+                <div className="book_card" key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
                   {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}

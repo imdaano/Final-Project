@@ -6,6 +6,7 @@ import {
   deleteCheckpoint,
   getCheckpoints,
 } from "../redux/checkpoint/checkpoint.functions";
+import './styles/Checkpoints.scss';
 
 const Checkpoints = () => {
   const dispatch = useDispatch([]);
@@ -26,7 +27,7 @@ const Checkpoints = () => {
           {checkpoints &&
             checkpoints.map((checkpoint) => {
               return (
-                <div key={checkpoint.name}>
+                <div className="checkpoint_card" key={checkpoint.name}>
                   <h2>{checkpoint.name}</h2>
                   <img src={checkpoint.img} alt={checkpoint.name} />
                   <ReusableButton
