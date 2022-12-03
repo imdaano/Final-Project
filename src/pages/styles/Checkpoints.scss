@@ -1,0 +1,26 @@
+.checkpoints {
+    text-align: center;
+}
+.checkpoint_card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 1rem 0rem 1rem 0rem;
+    img {
+        width: 200px;
+        height: 225px;
+        padding: 0rem 0rem 1rem 0rem;
+    }
+    .checkpoint--btn {
+        border-radius: 2px;
+        font-family: sans-serif;
+        background-color: rgb(245, 250, 206);
+        a {
+            color: darkkhaki;
+        }
+    }
+    button {
+        background-color: red;
+    }
+}

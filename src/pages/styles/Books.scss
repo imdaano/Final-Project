@@ -1,0 +1,39 @@
+.books{
+    text-align: center;
+    width: 100%;
+}
+    
+    .book_card{
+        width: 50%;
+        background-color: aqua;
+        display: flex;
+flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+    img {
+        width: 200px;
+        height: 225px;
+        padding: 1rem;
+    }
+        .book--btn{
+            border-radius: 2px;
+            font-family: sans-serif;
+            background-color:rgb(245, 250, 206);
+            a{
+                color: darkkhaki;
+                }
+        }
+        button{
+            background-color: red;
+        }
+
+    }
+
+
+
+
+
+   
+
+
