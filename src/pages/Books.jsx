@@ -23,7 +23,10 @@ const Books = () => {
                 <div key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
-                  <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button>
+                  <ReusableButton 
+                  click={() => dispatch(deleteBook(book._id, dispatch))}
+                  text={"Eliminar"}/>
+                  {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}
                   <ReusableButton
                     clase={"book--btn"}
                     text={<Link to={`/books/${book.title}`}>Ver más</Link>}
