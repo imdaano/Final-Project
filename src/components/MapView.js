@@ -41,7 +41,7 @@ const MapView = () => {
         attribution={`&copy; <a href="https://www.openstreetmap.org/copyright"> OpenStreetMap </a> contributors`} // agradecimiento
       />
       {console.log(checkpoints)};
-      {checkpoints.map((checkpoint, i) => {
+      {checkpoints && checkpoints.map((checkpoint, i) => {
         return <Markers place={checkpoint} key={i} />;
       })}
       {state && <Markers place={state}/>}

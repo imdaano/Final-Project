@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
 import Navbar from "./components/Navbar";
+import PutBook from "./pages/PutBook";
 // import Map from "./components/Map";
 
 
@@ -36,6 +37,8 @@ function App() {
         <Route path='/books' element={<Books />} />
         <Route path='/books/:title' element={<BookInfo />} />
         <Route path='/newBook' element={<NewBook />} />
+        <Route path='/editBook' element={<PutBook />} />
+
         {/* <Route path="/editBook" element={<EditBook />}/>
         <Route path="/deleteBook" element={<DeleteBook />}/> */}
       </Routes>

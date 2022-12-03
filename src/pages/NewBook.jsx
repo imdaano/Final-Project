@@ -12,7 +12,7 @@ const NewBook = () => {
   } = useForm();
 
 let navigate = useNavigate();
-const dispatch= useDispatch();
+const dispatch = useDispatch();
 
 const postBook = (dataForm) => {
 	const formData = new FormData();
