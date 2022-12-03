@@ -67,7 +67,7 @@ const checkpointReducer = (state = INITIAL_STATE, action) => {
         return {
           ...state,
           isLoading: false,
-          checkpoint: action.payload,
+          checkpoints: [...action.payload],
           error: false,
         };
   

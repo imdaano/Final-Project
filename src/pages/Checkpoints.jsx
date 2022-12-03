@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { getCheckpoints } from "../redux/checkpoint/checkpoint.functions";
+import {
+  deleteCheckpoint,
+  getCheckpoints,
+} from "../redux/checkpoint/checkpoint.functions";
 
 const Checkpoints = () => {
   const dispatch = useDispatch([]);
@@ -26,6 +29,12 @@ const Checkpoints = () => {
                 <div key={checkpoint.name}>
                   <h2>{checkpoint.name}</h2>
                   <img src={checkpoint.img} alt={checkpoint.name} />
+                  <ReusableButton
+                    click={() =>
+                      dispatch(deleteCheckpoint(checkpoint._id, dispatch))
+                    }
+                    text={"Eliminar"}
+                  />
                   <ReusableButton
                     clase={"checkpoint--btn"}
                     text={
