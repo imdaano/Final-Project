@@ -22,7 +22,7 @@ const postBook = (dataForm) => {
 	formData.append('genre', dataForm.genre);
 	formData.append('synopsis', dataForm.synopsis);
 	dispatch(postNewBook(formData, navigate))
-};
+}
 
 return (
 	<form onSubmit= {handleSubmit(postBook)}>
@@ -34,7 +34,7 @@ return (
 		</label>
 			{errors.title ? <>
 			{errors.title.type === 'required' && <p>{errors.title.message}</p>}
-			</> : null};
+			</> : null}
 		<label>
 			Foto Portada
 			<input type="file" name='img' {...register('img', {

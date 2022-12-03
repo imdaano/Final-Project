@@ -15,7 +15,7 @@ const Books = () => {
       <main>
         <div className="books">
           <h1>Books</h1>
-          {isLoading && "Cargando"}
+          {isLoading && (<img src="../../public/assetsFront/images/book-90.gif" alt="loading"/>)}
           {error && error.message}
           {books &&
             books.map((book) => {

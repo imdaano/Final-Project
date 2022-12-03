@@ -31,7 +31,7 @@ function App() {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/login' element={<Login />} />
         <Route path='/myAccount' element={<MyAccount />} />
-        <Route path='/myAccount' element={<NewCheckpoint />} />
+        <Route path='/newCheckpoint' element={<NewCheckpoint />} />
         <Route path='/register' element={<Register />} />
         <Route path='/books' element={<Books />} />
         <Route path='/bookInfo' element={<BookInfo />} />
