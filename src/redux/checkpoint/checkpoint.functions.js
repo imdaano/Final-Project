@@ -11,6 +11,16 @@ export const getCheckpoints = () => async (dispatch) => {
     dispatch({ type: "errorCheckpoints", payload: error.message });
   }
 };
+export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
+  dispatch({ type: "gettingCheckpoint" });
+
+  try {
+    const checkpointInfo = checkpoints.filter((checkpoint) => checkpoint.name === name);
+    dispatch({ type: "getCheckpoint", payload: checkpointInfo[0] });
+  } catch (error) {
+    dispatch({ type: "errorCheckpoint", payload: error.message });
+  }
+};
 
 //? Terminar de corregir functions de checkpoints
 
