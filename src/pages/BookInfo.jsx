@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { deleteBook, getOneBook } from "../redux/books/books.functions";
-
+import './styles/BookInfo.scss';
 const BookInfo = () => {
   const { title } = useParams();
   const dispatch = useDispatch();
