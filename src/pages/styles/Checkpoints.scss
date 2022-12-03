@@ -1,17 +1,25 @@
 .checkpoints {
     text-align: center;
-}
-.checkpoint_card {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-items: center;
-    padding: 1rem 0rem 1rem 0rem;
-    img {
-        width: 200px;
-        height: 225px;
-        padding: 0rem 0rem 1rem 0rem;
-    }
+}
+.checkpoint_card {
+    color: rgb(128, 78, 22);
+    width: 50%;
+    background-color: rgb(209, 194, 127);
+ flex-wrap: wrap;
+align-content: center;
+align-items: center;
+padding: 1rem 0rem;
+margin-bottom: 15px;
+border-radius: 3px;
+img {
+    width: 200px;
+    height: 225px;
+    padding: 1rem;
+}
     .checkpoint--btn {
         border-radius: 2px;
         font-family: sans-serif;
