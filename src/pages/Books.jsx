@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { deleteBook, getBooks } from "../redux/books/books.functions";
+import { getBooks } from "../redux/books/books.functions";
 import './styles/Books.scss'
 
 const Books = () => {
