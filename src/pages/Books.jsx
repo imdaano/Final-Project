@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { deleteBook, getBooks } from "../redux/books/books.functions";
+import { getBooks } from "../redux/books/books.functions";
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -23,9 +23,6 @@ const Books = () => {
                 <div key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
-                  <ReusableButton 
-                  click={() => dispatch(deleteBook(book._id, dispatch))}
-                  text={"Eliminar"}/>
                   {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}
                   <ReusableButton
                     clase={"book--btn"}
