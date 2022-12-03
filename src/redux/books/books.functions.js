@@ -35,6 +35,17 @@ export const postNewBook = (dataForm) => async (dispatch) => {
   }
 };
 
+export const putBook = (id, dataForm) => async(dispatch) => {
+  dispatch({ type: 'puttingBook'});
+  try {
+    const res = await API2.put('/books/edit', id, dataForm);
+    console.log(res);
+    dispatch({ type: 'putBook'});
+  } catch (error) {
+    dispatch({ type: 'errorPutBook', payload: error})
+  }
+}
+
 export const deleteBook = (id) => async (dispatch) => {
   dispatch({ type: "deletingBook" });
 

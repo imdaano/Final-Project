@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { deleteBook, getOneBook } from "../redux/books/books.functions";
+import { deleteBook, getOneBook, putBook } from "../redux/books/books.functions";
 
 const BookInfo = () => {
   const { title } = useParams();
@@ -41,6 +41,9 @@ const BookInfo = () => {
         <ReusableButton
           click={() => dispatch(deleteBook(book._id, dispatch))}
           text={"Eliminar"}
+        />
+        <ReusableButton click={() => dispatch(putBook(book._id, dispatch))}
+        text={<Link to={"/editBook"}>Actualizar</Link>}
         />
 {/*Botón acualizar cuando tengamos la función hecha*/}
         
