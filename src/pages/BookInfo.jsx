@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { getOneBook } from "../redux/books/books.functions";
+import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
+import ReusableButton from "../components/Button";
+import { deleteBook, getOneBook } from "../redux/books/books.functions";
 
 const BookInfo = () => {
   const { title } = useParams();
   const dispatch = useDispatch();
   const { book, books, isLoading, error } = useSelector((state) => state.books);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getOneBook(title, books));
@@ -31,11 +32,25 @@ const BookInfo = () => {
             <p>Autor/a: {book.author}</p>
             <p>Género: {book.genre}</p>
             <div className="book--card--synopsis">
-              <p>Sinposis: {book.synopsis}</p>
+              <p>Sinopsis: {book.synopsis}</p>
             </div>
           </div>
         </div>
       )}
+      <div className="action--btns">
+        <ReusableButton
+          click={() => dispatch(deleteBook(book._id, dispatch))}
+          text={"Eliminar"}
+        />
+{/*Botón acualizar cuando tengamos la función hecha*/}
+        
+      </div>
+      <div className="back--btn">
+        <ReusableButton
+          clase={"back--btn--class"}
+          text={<Link to={"/books"}>Volver</Link>}
+        />
+      </div>
     </div>
   );
 };
