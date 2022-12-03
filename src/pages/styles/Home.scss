@@ -1,6 +1,47 @@
 .home--container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
+    padding: 4rem 0rem 1.2rem 0rem;
 
+.button--books{
+    background-color: rgb(0, 255, 170);
+    width: 275px;
+    height: 117px;
+    font-family: fantasy;
+    font-size: 50px;
+    border-radius: 10px;
+    text{
+        text-decoration-style: none;
+    }
+    
+    
+}
+
+.button--checkpoints{
+    background-color: rgb(227, 241, 94);
+    width: 275px;
+    height: 117px;
+    font-family: fantasy;
+    font-size: 50px;
+    border-radius: 10px;
+}
+.button--map{
+    background-color: rgb(204, 102, 235);
+    width: 275px;
+    height: 117px;
+    font-family: fantasy;
+    font-size: 50px;
+    border-radius: 10px;
+}
+.button--myaccount{
+    background-color: rgba(250, 77, 86, 0.815);
+    width: 275px;
+    height: 117px;
+    font-family: fantasy;
+    font-size: 50px;
+    border-radius: 10px;
+}
 }
