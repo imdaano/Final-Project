@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { deleteBook, getBooks } from "../redux/books/books.functions";
+import './styles/Books.scss'
 
 const Books = () => {
   const dispatch = useDispatch();
@@ -15,17 +16,14 @@ const Books = () => {
       <main>
         <div className="books">
           <h1>Books</h1>
-          {isLoading && "Cargando"}
+          {isLoading && (<img src="../../public/assetsFront/images/book-90.gif" alt="loading"/>)}
           {error && error.message}
           {books &&
             books.map((book) => {
               return (
-                <div key={book.title}>
+                <div className="book_card" key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
-                  <ReusableButton 
-                  click={() => dispatch(deleteBook(book._id, dispatch))}
-                  text={"Eliminar"}/>
                   {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}
                   <ReusableButton
                     clase={"book--btn"}
