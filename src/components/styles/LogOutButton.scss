@@ -1,0 +1,26 @@
+.logout {
+  margin-top: 40px;
+  text-align: center;
+  line-height: 3;
+  color: whitesmoke;
+
+  button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 10px;
+    color: #002c55;
+    background: rgba(245, 245, 245, 0.788);
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #002c55;
+      border-color: whitesmoke;
+    }
+  }
+}

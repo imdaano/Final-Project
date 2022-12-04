@@ -1,14 +1,13 @@
+import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import {
-  deleteBook,
-  getOneBook,
-} from "../redux/books/books.functions";
+import { deleteBook, getOneBook } from "../redux/books/books.functions";
 import "./styles/BookInfo.scss";
 
 const BookInfo = () => {
+  const { user, token } = useSelector((state) => state.auth);
   const { title } = useParams();
   const dispatch = useDispatch();
   const { book, books, isLoading, error } = useSelector((state) => state.books);
@@ -41,18 +40,24 @@ const BookInfo = () => {
           </div>
         </div>
       )}
-      <div className="action--btns">
-        <ReusableButton
-          clase={"delete--btn"}
-          click={() => dispatch(deleteBook(book._id, dispatch))}
-          text={"Eliminar"}
-        />
-        <ReusableButton
-          clase={"update--btn"}
-          text={<Link to={"/editBook"}>Actualizar</Link>}
-        />
-        {/*Botón acualizar cuando tengamos la función hecha*/}
-      </div>
+      {token && (
+        <>
+          {user.rol === "admin" && (
+            <>
+              <ReusableButton
+                clase={"delete--btn"}
+                click={() => dispatch(deleteBook(book._id, dispatch))}
+                text={"Eliminar"}
+              />
+              <ReusableButton
+                clase={"update--btn"}
+                text={<Link to={"/editBook"}>Actualizar</Link>}
+              />
+            </>
+          )}
+        </>
+      )}
+      <div className="action--btns"></div>
       <div className="back--btn">
         <ReusableButton
           clase={"back--btn--class"}

@@ -44,7 +44,7 @@ export const logOutUser = (navigate, dispatch) => {
 		dispatch({ type: "logout_user_ok" });
 		dispatch({ type: "removeAll" });
 		localStorage.removeItem("token");
-		navigate("/");
+		navigate("/users");
 	} catch (error) {
 		dispatch({ type: "logout_user_error", payload: error.message });
 	}
