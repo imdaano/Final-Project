@@ -15,7 +15,6 @@ import Register from "./pages/Register";
 import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
 import Navbar from "./components/Navbar";
-import PutBook from "./pages/PutBook";
 import EditBook from "./pages/EditBook";
 // import Map from "./components/Map";
 
