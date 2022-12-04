@@ -44,6 +44,13 @@ const NewCheckpoint = () => {
         })} />
       </label>
         {errors.img ? <p>Adjunta una imagen</p> : null}
+        <label>
+          Latitud
+          <input type='text' name='latitud' {...register('latitud', {
+            required: 'Introduce las coordenadas'
+          })} />
+        </label>
+          {errors.latitud ? <p>Introduce las coordenadas</p> : null}
       <label>
         Longitud
         <input type='text' name='longitud' {...register('longitud', {
@@ -51,13 +58,6 @@ const NewCheckpoint = () => {
         })} />
       </label>
       {errors.longitud ? <p>Introduce las coordenadas</p> : null}
-      <label>
-        Latitud
-        <input type='text' name='latitud' {...register('latitud', {
-          required: 'Introduce las coordenadas'
-        })} />
-      </label>
-        {errors.latitud ? <p>Introduce las coordenadas</p> : null}
         
       <label>
         Dirección

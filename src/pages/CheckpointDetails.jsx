@@ -5,7 +5,6 @@ import ReusableButton from "../components/Button";
 import {
   deleteCheckpoint,
   getOneCheckpoint,
-  putCheckpoint
 } from "../redux/checkpoint/checkpoint.functions";
 import "./styles/CheckpointDetail.scss";
 
@@ -23,24 +22,31 @@ const CheckpointDetail = () => {
 
   return (
     <div className="checkpointInfo--main">
+
+      <div className="back--btn">
+      <ReusableButton
+          clase={"back--btn--class"}
+          text={<Link to={"/checkpoints"}><img src="/assetsFront/images/back.png" alt="back" /></Link>}
+        />
+      </div>
       {isLoading && (
         <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
       )}
       {error && error.message}
       {checkpoint && (
         <div className="checkpointInfo">
+            {/* <h2>{checkpoint.name}</h2> */}
           <div className="checkpoint--card">
-            <h2>{checkpoint.name}</h2>
             <div className="checkpoint--card--img">
               <img src={checkpoint.img} alt={checkpoint.name} />
             </div>
           </div>
           <div className="checkpoint--card--info">
-            <p>{checkpoint.name}</p>
-            <p>{checkpoint.address}</p>
-            <p>{checkpoint.phone}</p>
-            {/* <p>{checkpoint.location}</p>  */}
-            {/* <p>{checkpoint.books}</p> */}
+            <p><img src="/assetsFront/images/icons8-casa.svg" alt={checkpoint.name}/>{checkpoint.name}</p>
+            <p><img src="/assetsFront/images/icons8-maps.svg" alt={checkpoint.address}/>{checkpoint.address}</p>
+            <p><img src="/assetsFront/images/icons8-teléfono-48.png" alt={checkpoint.phone}/>{checkpoint.phone}</p>
+            {/* <p>{checkpoint.location.coordinates}</p>  */}
+            <p><img src="/assetsFront/images/icons8-libros-48.png" alt={checkpoint.books}/>{checkpoint.books}</p>
           </div>
         </div>
       )}
@@ -54,10 +60,7 @@ const CheckpointDetail = () => {
           clase={"update--btn"}
           text={<Link to={"/editCheckpoint"}>Actualizar</Link>}
         />
-        <ReusableButton
-          clase={"back--btn--class"}
-          text={<Link to={"/checkpoints"}>Volver</Link>}
-        />
+       
       </div>
     </div>
   );
