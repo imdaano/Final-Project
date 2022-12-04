@@ -1,48 +1,35 @@
 .navbar {
-    // position: fixed;
-    // z-index: 1;
-    height: 15vh;
+  position: fixed;
+  z-index: 1;
+  height: 10vh;
+  width: 100%;
+  border-top: solid 3px gray;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+
+  .links {
     width: 100%;
-    border-top: solid 3px gray;
-    background: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 
-    .links {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        
-        a {
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
-    
-        .map {
-            width: 50px;
-            height: auto;
-        }
-        
-        .checkpoint {
-            width: 50px;
-            height: auto;
-        }
+    a {
+      text-align: center;
 
-        .home {
-            width: 50px;
-            height: auto;
-        }
-        
-        .books {
-            width: 50px;
-            height: auto;
-        }
-        
-        .create {
-            width: 50px;
-            height: auto;
-        }
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 50px;
+        height: auto;
+      }
+
+      h5 {
+        color: black;
+        font-size: 12px;
+      }
     }
-
+  }
 }

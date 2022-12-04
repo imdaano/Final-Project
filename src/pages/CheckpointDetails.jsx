@@ -21,32 +21,63 @@ const CheckpointDetail = () => {
   }, []);
 
   return (
-    <div className="checkpointInfo--main">
-
-      <div className="back--btn">
-      <ReusableButton
+    <div className="checkpoint--detail">
+      <div className="title">
+        {/* <ReusableButton
           clase={"back--btn--class"}
-          text={<Link to={"/checkpoints"}><img src="/assetsFront/images/back.png" alt="back" /></Link>}
-        />
+          text={
+            <Link to={"/checkpoints"}>
+              <img src="/assetsFront/images/back.png" alt="back" />
+            </Link>
+          }
+        /> */}
+        <h1>Información</h1>
       </div>
       {isLoading && (
         <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
       )}
       {error && error.message}
       {checkpoint && (
-        <div className="checkpointInfo">
-            {/* <h2>{checkpoint.name}</h2> */}
+        <div className="checkpoint--info">
+          {/* <h2>{checkpoint.name}</h2> */}
           <div className="checkpoint--card">
             <div className="checkpoint--card--img">
               <img src={checkpoint.img} alt={checkpoint.name} />
             </div>
           </div>
           <div className="checkpoint--card--info">
-            <p><img src="/assetsFront/images/icons8-casa.svg" alt={checkpoint.name}/>{checkpoint.name}</p>
-            <p><img src="/assetsFront/images/icons8-maps.svg" alt={checkpoint.address}/>{checkpoint.address}</p>
-            <p><img src="/assetsFront/images/icons8-teléfono-48.png" alt={checkpoint.phone}/>{checkpoint.phone}</p>
-            {/* <p>{checkpoint.location.coordinates}</p>  */}
-            <p><img src="/assetsFront/images/icons8-libros-48.png" alt={checkpoint.books}/>{checkpoint.books}</p>
+            <p>
+              <img
+                src="/assetsFront/images/icons8-casa.svg"
+                alt={checkpoint.name}
+              />
+              {checkpoint.name}
+            </p>
+            <p>
+              <img
+                src="/assetsFront/images/icons8-maps.svg"
+                alt={checkpoint.address}
+              />
+              {checkpoint.address}
+            </p>
+              {/* <p><img
+                src="/assetsFront/images/brújula.png"
+                alt={checkpoint.location.coordinates}
+              />{checkpoint.location.coordinates}</p> */}
+            <p>
+              <img
+                src="/assetsFront/images/icons8-teléfono-48.png"
+                alt={checkpoint.phone}
+              />
+              {checkpoint.phone}
+            </p>
+            <p>
+              <img
+                src="/assetsFront/images/icons8-libros-48.png"
+                alt={checkpoint.books}
+              />
+              {checkpoint.books}
+            </p>
           </div>
         </div>
       )}
@@ -54,13 +85,12 @@ const CheckpointDetail = () => {
         <ReusableButton
           clase={"delete--btn"}
           click={() => dispatch(deleteCheckpoint(checkpoint._id, dispatch))}
-          text={"Eliminar"}
+          text={<img src="/assetsFront/images/delete.png" alt="delete"/>}
         />
         <ReusableButton
           clase={"update--btn"}
-          text={<Link to={"/editCheckpoint"}>Actualizar</Link>}
+          text={<Link to={"/editCheckpoint"}><img src="/assetsFront/images/update.png" alt="update"/></Link>}
         />
-       
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import "./styles/Register.scss";
+import "./styles/UserForm.scss";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +23,8 @@ const Register = () => {
   };
 
   return (
-    <div className="register page">
+    <div className="users">
+    <div className="register-login">
       <div className="container">
         {error && <h2 className="error">{error}</h2>}
         {isLoading && <h2 className="loading">Registering user</h2>}
@@ -124,6 +125,7 @@ const Register = () => {
           <ReusableButton text={"Submit"} />
         </form>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,46 +1,64 @@
-.checkpointInfo--main{
-    position: relative;
+.checkpoint--detail {
+  display: flex;
+  flex-direction: column;
+  
+  .title {
+   text-align: center;
+   padding-bottom: 10px;
+  }
+
+  .checkpoint--info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-.checkpoint--card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
 
     .checkpoint--card {
-      background-color: orange;
-
       .checkpoint--card--img {
-        width: 200px;
-        padding: 10px;
-
+        width: 250px;
+        height: 190px;
+        padding: 5px;
         img {
           width: 100%;
+          border-radius: 20px;
         }
       }
     }
-
     .checkpoint--card--info {
-      background-color: aqua;
-      width: 100%;
+      padding: 1rem;
+      background-color: rgba(22, 22, 22, 0.199);
+
       p {
+      display: flex;
+      align-items: center;
+      
         img {
-          width: 15px;
+          padding: 5px;
+          width: 30px;
         }
       }
     }
   }
 
-  .back--btn{
-       background: transparent;
-    .back--btn--class{
-        
-       a img{
-            width: 20px;
-        }
+  .action--btns {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.9rem 2rem;
+    
+    button{
+      border-radius: 15px;
+      width: 70px;
+      height: 40px;
+
+      img {
+        width: 25px;
+      }
+
+    }
+    .delete--btn {
+      background-color: rgba(248, 53, 53, 0.747);
+    }
+    .update--btn {
+      background-color: rgba(238, 241, 10, 0.89);
     }
   }
 }
