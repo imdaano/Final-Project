@@ -16,6 +16,7 @@ import BookInfo from "./pages/BookInfo";
 import Books from "./pages/Books";
 import Navbar from "./components/Navbar";
 import EditBook from "./pages/EditBook";
+import EditCheckpoint from "./pages/EditCheckpoint";
 // import Map from "./components/Map";
 
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/books/:title' element={<BookInfo />} />
         <Route path='/newBook' element={<NewBook />} />
         <Route path='/editBook' element={<EditBook />} />
+        <Route path='/editCheckpoint' element={<EditCheckpoint />} />
 
         {/* <Route path="/editBook" element={<EditBook />}/>
         <Route path="/deleteBook" element={<DeleteBook />}/> */}

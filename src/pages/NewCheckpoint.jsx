@@ -19,8 +19,8 @@ const NewCheckpoint = () => {
     const formData = new FormData();
     formData.append('name', dataForm.name);
     formData.append('img', dataForm.img);
-    formData.append('location.coordinates', dataForm.location.coordinates);
-    // formData.append('location.coordinates', dataForm.location.coordinates[1]);
+    formData.append('location.coordinates', dataForm.location.coordinates[0]);
+    formData.append('location.coordinates', dataForm.location.coordinates[1]);
     formData.append('address', dataForm.address);
     formData.append('phone', dataForm.phone);
     dispatch(postNewCheckpoint(formData, navigate))
@@ -46,18 +46,18 @@ const NewCheckpoint = () => {
         {errors.img ? <p>Adjunta una imagen</p> : null}
       <label>
         Longitud
-        <input type='[number]' name='location.coordinates' {...register('location.coordinates', {
+        <input type='[number]' name='location.coordinates' {...register('location.coordinates[0]', {
           required: 'Introduce las coordenadas'
         })} />
       </label>
-      {errors.author ? <p>Introduce las coordenadas</p> : null}
-      {/* <label>
+      {errors.location.coordinates[0] ? <p>Introduce las coordenadas</p> : null}
+      <label>
         Latitud
-        <input type='[number]' name='location.coordinates[1]' {...register('location.coordinates', {
+        <input type='[number]' name='location.coordinates[1]' {...register('location.coordinates[1]', {
           required: 'Introduce las coordenadas'
         })} />
       </label>
-        {errors.author ? <p>Introduce las coordenadas</p> : null} */}
+        {errors.location.coordinates[1] ? <p>Introduce las coordenadas</p> : null}
         
       <label>
         Dirección
