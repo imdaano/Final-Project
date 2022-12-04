@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { putCheckpoint } from "../redux/checkpoint/checkpoint.functions";
-import './styles/Create.scss';
+import "./styles/CreateForm.scss";
 
 const EditCheckpoint = () => {
   const navigate = useNavigate();
@@ -14,26 +14,34 @@ const EditCheckpoint = () => {
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  const { checkpoint, error, isLoading } = useSelector((state) => state.checkpoints);
+  const { checkpoint, error, isLoading } = useSelector(
+    (state) => state.checkpoints
+  );
   const editCheckpoint = (dataForm) => {
     const formData = new FormData();
-    formData.append('name', dataForm.name);
-    formData.append('img', dataForm.img);
-    formData.append('location', JSON.stringify({type: "Point", coordinates: [dataForm.latitud, dataForm.longitud]}));
-    formData.append('address', dataForm.address);
-    formData.append('phone', dataForm.phone);
+    formData.append("name", dataForm.name);
+    formData.append("img", dataForm.img);
+    formData.append(
+      "location",
+      JSON.stringify({
+        type: "Point",
+        coordinates: [dataForm.latitud, dataForm.longitud],
+      })
+    );
+    formData.append("address", dataForm.address);
+    formData.append("phone", dataForm.phone);
     dispatch(putCheckpoint(checkpoint._id, formData, navigate));
   };
   console.log(checkpoint);
   return (
     <div className="create">
-      <div>
+      <div className="container">
         {error && <h2 className="error">{error.message}</h2>}
         {isLoading && <h2 className="loading">Editing checkpoint...</h2>}
         <h1>Edit Checkpoint</h1>
         <form onSubmit={handleSubmit(editCheckpoint)}>
           <label>
-            <p>Nombre</p>
+            <p>Name</p>
             <input
               type="text"
               name="name"
@@ -45,7 +53,7 @@ const EditCheckpoint = () => {
           </label>
           {errors.name && <p>{errors.name.message}</p>}
           <label>
-            <p>Foto</p>
+            <p>Photo</p>
             <input
               type="file"
               name="img"
@@ -56,25 +64,25 @@ const EditCheckpoint = () => {
           </label>
           {errors.img && <p>{errors.img.message}</p>}
           <label>
-            Latitud
+            Latitude
             <input
               type="text"
               name="latitud"
               // defaultValue={checkpoint.location.latitud}
               {...register("latitud")}
             />
-            </label>
-            <label>
-              Longitud
-               <input
+          </label>
+          <label>
+            Length
+            <input
               type="text"
               name="longitud"
               // defaultValue={checkpoint.location.longitud}
               {...register("longitud")}
             />
-            </label>
-           <label>
-            <p>Dirección</p>
+          </label>
+          <label>
+            <p>Address</p>
             <input
               type="text"
               name="address"
@@ -83,7 +91,7 @@ const EditCheckpoint = () => {
             />
           </label>
           <label>
-            <p>Teléfono</p>
+            <p>Phone Number</p>
             <input
               type="text"
               name="phone"
@@ -91,7 +99,7 @@ const EditCheckpoint = () => {
               {...register("phone")}
             />
           </label>
-          <ReusableButton clase={"update--btn"} text={"Actualizar"} />
+          <ReusableButton clase={"update--btn"} text={"Edit"} />
         </form>
       </div>
     </div>

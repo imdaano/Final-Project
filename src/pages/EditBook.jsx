@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import ReusableButton from "../components/Button";
 import { putBook } from "../redux/books/books.functions";
-import "./styles/Create.scss";
+import "./styles/CreateForm.scss";
 
 const EditBook = () => {
   const {
@@ -20,7 +20,7 @@ const EditBook = () => {
 
   return (
     <div className="create">
-      <div>
+      <div className="container">
         {error && <h2 className="error">{error.message}</h2>}
         {isLoading && <h2 className="loading">Editing book...</h2>}
         <h1>Edit Book</h1>
