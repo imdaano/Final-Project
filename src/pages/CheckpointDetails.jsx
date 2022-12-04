@@ -5,6 +5,7 @@ import ReusableButton from "../components/Button";
 import {
   deleteCheckpoint,
   getOneCheckpoint,
+  putCheckpoint
 } from "../redux/checkpoint/checkpoint.functions";
 import "./styles/CheckpointDetail.scss";
 
@@ -48,6 +49,10 @@ const CheckpointDetail = () => {
           clase={"delete--btn"}
           click={() => dispatch(deleteCheckpoint(checkpoint._id, dispatch))}
           text={"Eliminar"}
+        />
+        <ReusableButton
+          clase={"update--btn"}
+          text={<Link to={"/editCheckpoint"}>Actualizar</Link>}
         />
         <ReusableButton
           clase={"back--btn--class"}
