@@ -5,7 +5,6 @@ import ReusableButton from "../components/Button";
 import {
   deleteBook,
   getOneBook,
-  putBook,
 } from "../redux/books/books.functions";
 import "./styles/BookInfo.scss";
 

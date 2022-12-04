@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import {
-  deleteCheckpoint,
   getCheckpoints,
 } from "../redux/checkpoint/checkpoint.functions";
 import './styles/Checkpoints.scss';
