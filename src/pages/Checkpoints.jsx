@@ -30,12 +30,7 @@ const Checkpoints = () => {
                 <div className="checkpoint_card" key={checkpoint.name}>
                   <h2>{checkpoint.name}</h2>
                   <img src={checkpoint.img} alt={checkpoint.name} />
-                  <ReusableButton
-                    click={() =>
-                      dispatch(deleteCheckpoint(checkpoint._id, dispatch))
-                    }
-                    text={"Eliminar"}
-                  />
+                
                   <ReusableButton
                     clase={"checkpoint--btn"}
                     text={
