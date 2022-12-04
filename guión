@@ -5,16 +5,16 @@
 - Panel de ajustes de la app?? (NO)
 - Cambiar marcadores del mapa para diferenciar 
 - Enlazar términos de uso con algún documento
-- Formulario checkpoints (coordenadas geográficas)/put y post (SANTI)
+- Formulario checkpoints (coordenadas geográficas)/put y post (SANTI) ✅
 - Favoritos (Mis libros)
 - Vaivén de libros
 - Mensaje en register "Este email ya existe o ya está siendo utilizado"
 - Buscador (books y checkpoints)
-- Botón (icono o botón) para crear elementos(books y checkpoints) en cada sección. "Nuevo..."
+- Botón (icono o botón) para crear elementos(books y checkpoints) en cada sección. "Nuevo..." (✅)
 
 
 ==>ESTILOS
-- Botón de back con un icono de flecha en la parte superior izquierda
+- Botón de back con un icono de flecha en la parte superior izquierda (✅ FALTA ESTILARLO EN TODOS LOS COMPONENTES EN LOS QUE LO NECESITEMOS)
 - Botones de rutas principales que ocupan toda la pantalla
 - registro/loggin como en la foto
 - Títulos de cada sección más visuales, con imágenes, fijos en la parte superior
@@ -26,5 +26,5 @@ En los details ya nos explayamos, pero la foto más pequeña
 
 
 ==>PREGUNTAR A SANTI
-- defaultValue en el put checkpoint formulario
+- defaultValue en el put checkpoint formulario 
 - get después del put
