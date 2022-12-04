@@ -9,8 +9,8 @@ const DeleteBook = () => {
   const dispatch = useDispatch();
   const { books, error, isLoading } = useSelector((state) => state.books);
 
-  const removeBook = (formdata) => {
-    deleteBook(formdata, books, dispatch);
+  const removeBook = async(formdata) => {
+    dispatch(deleteBook(formdata, books));
   };
   return (
     <div className="deletebook">

@@ -68,6 +68,7 @@ return (
 			<ReusableButton 
 			clase={"newbook--btn"}
 			text={'Crear'}/>
+			<alert severity='success' color='info'>Libro creado correctamente</alert>
 
 
 	</form>
