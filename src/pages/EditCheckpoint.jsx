@@ -1,11 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { putCheckpoint } from "../redux/checkpoint/checkpoint.functions";
 import './styles/Create.scss';
 
 const EditCheckpoint = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,11 +15,16 @@ const EditCheckpoint = () => {
   } = useForm();
   const dispatch = useDispatch();
   const { checkpoint, error, isLoading } = useSelector((state) => state.checkpoints);
-  const editCheckpoint = (formdata) => {
-    formdata.img = formdata.img[0];
-    dispatch(putCheckpoint(checkpoint._id, formdata));
+  const editCheckpoint = (dataForm) => {
+    const formData = new FormData();
+    formData.append('name', dataForm.name);
+    formData.append('img', dataForm.img);
+    formData.append('location', JSON.stringify({type: "Point", coordinates: [dataForm.latitud, dataForm.longitud]}));
+    formData.append('address', dataForm.address);
+    formData.append('phone', dataForm.phone);
+    dispatch(putCheckpoint(checkpoint._id, formData, navigate));
   };
-
+  console.log(checkpoint);
   return (
     <div className="create">
       <div>

@@ -28,7 +28,7 @@ export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
 
 //? Terminar de corregir functions de checkpoints
 
-export const postNewCheckpoint = (dataForm) => async (dispatch) => {
+export const postNewCheckpoint = (dataForm, navigate) => async (dispatch) => {
   dispatch({ type: "postingCheckpoint" });
   try {
     const res = await API2.post("/checkpoints/create", dataForm);
@@ -36,6 +36,7 @@ export const postNewCheckpoint = (dataForm) => async (dispatch) => {
     // checkpoints.push(res.data); //dudas
     console.log(res);
     dispatch({ type: "postCheckpoint" });
+    navigate(`/checkpoints/${res.data.name}`)
   } catch (error) {
     dispatch({ type: "errorPostCheckpoint", payload: error });
   }
@@ -43,23 +44,26 @@ export const postNewCheckpoint = (dataForm) => async (dispatch) => {
 
 export const putCheckpoint = (id, dataForm, navigate) => async (dispatch) => {
   dispatch({ type: "puttingCheckpoint" });
+  console.log("inside putcheckpoint");
   try {
     const res = await API2.put(`/checkpoints/edit/${id}`, dataForm);
     console.log(res);
-    dispatch({ type: "putCheckpoint" });
+    dispatch({ type: "putCheckpoint", payload: res.data});
     navigate('/checkpoints')
   } catch (error) {
+    console.log(error);
     dispatch({ type: "errorPutCheckpoint", payload: error });
   }
 };
 
-export const deleteCheckpoint = (id) => async (dispatch) => {
+export const deleteCheckpoint = (id, navigate) => async (dispatch) => {
   dispatch({ type: "deletingCheckpoint" });
 
   try {
     await API.delete(`/checkpoints/delete/${id}`);
     const result = await API.get("/checkpoints");
     dispatch({ type: "deleteCheckpoint", payload: result.data });
+    navigate("/checkpoints")
   } catch (error) {
     dispatch({ type: "errorDeleteCheckpoint", payload: error.response.data });
   }
