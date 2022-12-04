@@ -37,35 +37,16 @@ export const postNewCheckpoint = (dataForm) => async(dispatch) => {
   }
 };
 
-// export const putCheckpoint = async (formdata, checkpoints, dispatch) => {
-//   dispatch({ type: "puttingCheckpoint" });
-//   try {
-//     await API2.put(`/checkpoints/edit/${formdata._id}`, formdata);
-//     const res = await API.get(`/checkpoints/id{formdata._id}`);
-//     const newCheckpoint = [];
-//     checkpoints.forEach((checkpoint) => {
-//       //dudas
-//       newCheckpoint.push(
-//         checkpoint._id === res.data._id
-//           ? {
-//               //dudas???!!!
-//               ...checkpoint,
-//               _id: res.data._id,
-//               name: res.data.name,
-//               img: res.data.img,
-//               location: res.data.location.coordinates,
-//               address: res.data.address,
-//               phone: res.data.phone,
-//               // Mirar bien en el back el schema
-//             }
-//           : checkpoint
-//       );
-//     });
-//     dispatch({ type: "putCheckpoint", payload: newCheckpoint });
-//   } catch (error) {
-//     dispatch({ type: "errorPutCheckpoint", payload: error.response.data });
-//   }
-// };
+export const putCheckpoint = (id, dataForm) => async(dispatch) => {
+  dispatch({ type: 'puttingCheckpoint'});
+  try {
+    const res = await API2.put(`/checkpoint/edit/${id}`, dataForm);
+    console.log(res);
+    dispatch({ type: 'putCheckpoint'});
+  } catch (error) {
+    dispatch({ type: 'errorPutCheckpoint', payload: error})
+  }
+}
 
 export const deleteCheckpoint = (id) => async (dispatch) => {
   dispatch({ type: "deletingCheckpoint" });
