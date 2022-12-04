@@ -28,7 +28,7 @@ const Register = () => {
         {error && <h2 className="error">{error}</h2>}
         {isLoading && <h2 className="loading">Registering user</h2>}
         <form onSubmit={handleSubmit(registerUser)}>
-          <h1>Register</h1>
+          <h1>Register</h1>git
           <label>
             Email
             <input
