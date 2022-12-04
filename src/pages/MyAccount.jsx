@@ -1,19 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './styles/MyAccount.scss';
 
 const MyAccount = () => {
+
+  const {user} = useSelector((state) => state.auth);
+
   return (
     <div className='myaccount'>
       <div className="card">
-          <h2>Username</h2>
+          <h2>{user.username}</h2>
         <img
+        //CAMBIAR EL SCHEMA DEL BACK Y EL FORM DEL REGISTER EN EL FRONT
           src="https://pm1.narvii.com/6555/7ab2398321c4c5d2657922f401decc2df1192dab_hq.jpg"
           alt="img-profile"
           width="200px"
         />
         <div className="info">
-          <p>Name</p>
-          <h4>Email</h4>
+          <p>{user.name}</p>
+          <h4>{user.email}</h4>
         </div>
       </div>
     </div>
