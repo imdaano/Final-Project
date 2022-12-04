@@ -1,4 +1,4 @@
-import "./styles/Login.scss";
+import "./styles/UserForm.scss";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,7 +20,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login page">
+    <div className="users">
+    <div className="register-login">
       <div className="container">
         {error && <h2 className="error">{error}</h2>}
         {isLoading && <h2 className="loading">Logging User</h2>}
@@ -76,10 +77,13 @@ const Login = () => {
           ) : null}
           <ReusableButton text={"Submit"} />
         </form>
-        <div>
+        <div className="navigate">
+          <p>Click here to </p>
+          <h2>-</h2>
           <Link to="/register">Register</Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };

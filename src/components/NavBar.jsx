@@ -12,6 +12,7 @@ const Navbar = () => {
             className="map"
             alt="map"
           />
+          <h5>Map</h5>
         </Link>
         <Link to="/checkpoints">
           <img
@@ -19,6 +20,7 @@ const Navbar = () => {
             className="checkpoint"
             alt="checkpoint"
           />
+          <h5>Checkpoints</h5>
         </Link>
         <Link to="/home">
           <img
@@ -26,6 +28,7 @@ const Navbar = () => {
             className="home"
             alt="home"
           />
+          <h5>Home</h5>
         </Link>
         <Link to="/books">
           <img
@@ -33,6 +36,7 @@ const Navbar = () => {
             className="books"
             alt="book"
           />
+          <h5>Books</h5>
         </Link>
         <Link to="/create">
           <img
@@ -40,6 +44,7 @@ const Navbar = () => {
             className="create"
             alt="create"
           />
+          <h5>Create</h5>
         </Link>
       </div>
     </div>
