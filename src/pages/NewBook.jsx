@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { postNewBook } from "../redux/books/books.functions";
+import './styles/Create.scss';
 
 const NewBook = () => {
   const {
@@ -25,6 +26,8 @@ const postBook = (dataForm) => {
 }
 
 return (
+	<div className="create">
+	<h1>New Book</h1>
 	<form onSubmit= {handleSubmit(postBook)}>
 		<label>
 			Título
@@ -71,6 +74,7 @@ return (
 
 
 	</form>
+	</div>
 )
 
 };

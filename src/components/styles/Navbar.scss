@@ -1,28 +1,48 @@
 .navbar {
-    width: 80%;
-    margin: auto;
-    padding: 35px 0;
+    // position: fixed;
+    // z-index: 1;
+    height: 15vh;
+    width: 100%;
+    border-top: solid 3px gray;
+    background: whitesmoke;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    .map {
-        width: 50px;
-        height: auto;
-    }
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        
+        a {
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
     
-    .checkpoint {
-        width: 50px;
-        height: auto;
+        .map {
+            width: 50px;
+            height: auto;
+        }
+        
+        .checkpoint {
+            width: 50px;
+            height: auto;
+        }
+
+        .home {
+            width: 50px;
+            height: auto;
+        }
+        
+        .books {
+            width: 50px;
+            height: auto;
+        }
+        
+        .create {
+            width: 50px;
+            height: auto;
+        }
     }
-    
-    .books {
-        width: 50px;
-        height: auto;
-    }
-    
-    .profile {
-        width: 50px;
-        height: auto;
-    }
+
 }

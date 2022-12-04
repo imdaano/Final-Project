@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ReusableButton from '../components/Button';
 import { postNewCheckpoint } from '../redux/checkpoint/checkpoint.functions';
+import './styles/Create.scss'
 
 const NewCheckpoint = () => {
     const {
@@ -27,6 +28,8 @@ const NewCheckpoint = () => {
   }
   
   return (
+    <div className='create'>
+    <h1>New Checkpoint</h1>
     <form onSubmit= {handleSubmit(postCheckpoint)}>
       <label>
         Nombre
@@ -78,6 +81,7 @@ const NewCheckpoint = () => {
         clase={"newCheckpoint--btn"}
         text={'Crear'}/>
     </form>
+    </div>
   )
 }
 
