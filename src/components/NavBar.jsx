@@ -1,8 +1,11 @@
 import "./styles/Navbar.scss";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { user, token } = useSelector((state) => state.auth);
+
   return (
     <div className="navbar">
       <div className="links">
@@ -22,7 +25,7 @@ const Navbar = () => {
           />
           <h5>Checkpoints</h5>
         </Link>
-        <Link to="/home">
+        <Link to="/">
           <img
             src="https://img.icons8.com/ios7/12x/home.png"
             className="home"
@@ -38,14 +41,22 @@ const Navbar = () => {
           />
           <h5>Books</h5>
         </Link>
-        <Link to="/create">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1250/1250616.png"
-            className="create"
-            alt="create"
-          />
-          <h5>Create</h5>
-        </Link>
+        {token && (
+          <>
+            {user.rol === "admin" && (
+              <>
+                <Link to="/create">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/1250/1250616.png"
+                    className="create"
+                    alt="create"
+                  />
+                  <h5>Create</h5>
+                </Link>
+              </>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

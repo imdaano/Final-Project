@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { putCheckpoint } from "../redux/checkpoint/checkpoint.functions";
 import "./styles/CreateForm.scss";
@@ -40,6 +40,20 @@ const EditCheckpoint = () => {
         {isLoading && <h2 className="loading">Editing checkpoint...</h2>}
         <h1>Edit Checkpoint</h1>
         <form onSubmit={handleSubmit(editCheckpoint)}>
+          <div className="back">
+            <ReusableButton
+              clase={"back--btn"}
+              text={
+                <Link to={"/checkpoints"}>
+                  <img
+                    src="/assetsFront/images/back.png"
+                    alt="back"
+                    className="bck--btn"
+                  />
+                </Link>
+              }
+            />
+          </div>
           <label>
             <p>Name</p>
             <input
@@ -64,11 +78,12 @@ const EditCheckpoint = () => {
           </label>
           {errors.img && <p>{errors.img.message}</p>}
           <label>
+            {console.log(checkpoint)}
             Latitude
             <input
               type="text"
               name="latitud"
-              // defaultValue={checkpoint.location.latitud}
+              defaultValue={checkpoint.location.coordinates[0]}
               {...register("latitud")}
             />
           </label>
@@ -77,7 +92,7 @@ const EditCheckpoint = () => {
             <input
               type="text"
               name="longitud"
-              // defaultValue={checkpoint.location.longitud}
+              defaultValue={checkpoint.location.coordinates[1]}
               {...register("longitud")}
             />
           </label>

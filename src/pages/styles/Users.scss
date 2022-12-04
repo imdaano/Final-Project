@@ -1,33 +1,40 @@
 .users {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .button--box {
+    width: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
 
-    .button--box {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
+    a {
+      color: black;
 
-        button {
-          position: relative;
-          display: inline-block;
-          padding: 10px 10px;
-          color: #002c55;
-          background: rgba(245, 245, 245, 0.788);
-
-          font-size: 12px;
-          text-transform: uppercase;
-          transition: 0.5s;
-          letter-spacing: 1px;
-          border-radius: 10px;
-          cursor: pointer;
-
-          &:hover {
-            color: #ffffff;
-            background-color: #002c55;
-            border-color: whitesmoke;
-          }
-        }
+      &:hover {
+        color: #ffffff;
+      }
     }
+
+    button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 5px;
+      color: #002c55;
+      background: rgba(245, 245, 245, 0.788);
+      font-size: 12px;
+      text-transform: uppercase;
+      transition: 0.5s;
+      letter-spacing: 1px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: #ffffff;
+        background-color: #002c55;
+        border-color: whitesmoke;
+      }
+    }
+  }
 }

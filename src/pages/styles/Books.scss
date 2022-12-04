@@ -11,10 +11,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
     .book_card {
       color: rgb(0, 0, 0);
-      width: 200px;
+      width: 180px;
       height: 350px;
       padding-inline: 2px;
       background-color: rgb(156, 156, 156);
@@ -25,11 +25,11 @@
       align-items: center;
       margin: 5px;
       border-radius: 3px;
-  
+
       h2 {
         font-size: 15px;
       }
-  
+
       img {
         width: 180px;
         height: 250px;
@@ -39,12 +39,11 @@
         border-radius: 2px;
         font-family: sans-serif;
         background-color: rgb(245, 250, 206);
-        
+
         a {
           color: black;
         }
       }
     }
   }
-
 }

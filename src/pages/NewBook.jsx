@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ReusableButton from "../components/Button";
 import { postNewBook } from "../redux/books/books.functions";
@@ -14,6 +14,7 @@ const NewBook = () => {
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
+  const { isLoading, error } = useSelector((state) => state.books);
 
   const postBook = (dataForm) => {
     const formData = new FormData();
@@ -28,6 +29,8 @@ const NewBook = () => {
   return (
     <div className="create">
       <div className="container">
+        {error && <h2 className="error">{error}</h2>}
+        {isLoading && <h2 className="loading">Añadiendo libro...</h2>}
         <h1>New Book</h1>
         <form onSubmit={handleSubmit(postBook)}>
           <label>
@@ -96,9 +99,6 @@ const NewBook = () => {
           ) : null}
 
           <ReusableButton clase={"newbook--btn"} text={"Crear"} />
-          <alert severity="success" color="info">
-            Book created correctly
-          </alert>
         </form>
       </div>
     </div>
