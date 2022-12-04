@@ -1,30 +1,29 @@
-import { response } from 'express';
 import React from 'react';
 import swal from 'sweetalert';
 
-const showAlert = () => {
+export const showAlert = () => {
 
     swal({
         title:'titulo',
         text:'Este es el parrafo',
         icon:'success',    //tipos de icons:info-warning-error
-        button:'Ok',
+        button:'Accept',
         // timer:'2000'
 
     })
 }
 
-const deleteAlert = () => {
 
-    swal({
+export const deleteAlert = () => {
+
+    return swal({
         title:'eliminar',
-        text:'Estas seguro que desea eliminar?',
+        text:'Está seguro de que desea eliminar este elemento?',
         icon:'warning',    //tipos de icons:info-warning-error
-        button:['Borrar', 'Cancelar']
+        button:['Oh, no!', 'Ok!']
         // timer:'2000'
-
     }).then(respuesta =>{
-        if (respuesta) {
+        if (respuesta === 'Ok!') {
             swal({text:'Se ha borrado correctamente', 
         icon:'success'
     })

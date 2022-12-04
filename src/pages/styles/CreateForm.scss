@@ -10,6 +10,18 @@
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
 
+    .back {
+      display: flex;
+      .back--btn {
+        height: 20px;
+        width: 20px;
+        border: none;
+       a img {
+          width: 20px;
+          height: 20px;
+        }
+    }
+    }
     h1 {
       margin-bottom: 20px;
     }

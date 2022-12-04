@@ -16,8 +16,8 @@ export const getOneBook = (title, books) => async (dispatch) => {
   dispatch({ type: "gettingBook" });
 
   try {
-    const bookInfo = books.filter((book) => book.title === title);
-    dispatch({ type: "getBook", payload: bookInfo[0] });
+    const res = await API.get(`/books/title/${title}`);
+    dispatch({ type: "getBook", payload: res.data });
   } catch (error) {
     dispatch({ type: "errorBook", payload: error.message });
   }
@@ -34,13 +34,13 @@ export const getBookById = (id) => async (dispatch) => {
   }
 }
 
-export const postNewBook = (dataForm) => async (dispatch) => {
+export const postNewBook = (dataForm, navigate) => async (dispatch) => {
   dispatch({ type: "postingBook" });
   try {
     const res = await API2.post("books/create", dataForm);
     console.log(res);
     dispatch({ type: "postBook" });
-    // navigate(`/newBook/${result.data._id}`);
+    navigate(`/books/${res.data.title}`);
   } catch (error) {
     dispatch({ type: "errorPostBook", payload: error });
   }
