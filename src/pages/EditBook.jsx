@@ -11,7 +11,7 @@ const EditBook = () => {
 		formState: { errors },
 	} = useForm();
 	const dispatch = useDispatch();
-	const { book, books, error, isLoading } = useSelector((state) => state.books);
+	const { book, error, isLoading } = useSelector((state) => state.books);
 console.log(book);
 	const editBook = (formdata) => {
 		formdata.img = formdata.img[0];
