@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import ReusableButton from "../components/Button";
 import { putCheckpoint } from "../redux/checkpoint/checkpoint.functions";
+import './styles/Create.scss';
 
 const EditCheckpoint = () => {
   const {
@@ -18,7 +19,7 @@ const EditCheckpoint = () => {
   };
 //corregir -> hacer un map de los checkpoints y luego un for del array de coordenadas???
   return (
-    <div className="editCheckpoint">
+    <div className="create">
       <div>
         {error && <h2 className="error">{error.message}</h2>}
         {isLoading && <h2 className="loading">Editing checkpoint...</h2>}

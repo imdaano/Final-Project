@@ -6,7 +6,7 @@ import './styles/Home.scss';
 const Home = () => {
   return (
     <div className="home--container">
-      <ReusableButton 
+      {/* <ReusableButton 
         clase={"button--map"} 
         text={<Link to="/map">Map</Link>} 
       />
@@ -21,7 +21,10 @@ const Home = () => {
       <ReusableButton
         clase={"button--myaccount"}
         text={<Link to="/myAccount">My Account</Link>}
-      />
+      /> */}
+      <h1>
+        home
+      </h1>
     </div>
   );
 };
