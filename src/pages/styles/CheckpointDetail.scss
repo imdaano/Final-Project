@@ -1,6 +1,10 @@
-.checkpointInfo--main {
-
-  .checkpointInfo {
+.checkpointInfo--main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+.checkpoint--card{
     display: flex;
     flex-direction: column;
     align-items: center;

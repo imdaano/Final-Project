@@ -5,18 +5,43 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Link to="/map" >
-        <img src="https://cdn-icons-png.flaticon.com/512/854/854980.png" className="map" alt="map"/>
-      </Link>
-      <Link to="/checkpoints" >
-        <img src="https://img.icons8.com/ios7/12x/home.png" className="checkpoint" alt="checkpoint"/>
-      </Link>
-      <Link to="/books" >
-        <img src="https://cdn-icons-png.flaticon.com/512/130/130304.png" className="books" alt="book"/>
-      </Link>
-      <Link to="/myAccount" >
-        <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" className="profile" alt="user"/>
-      </Link>
+      <div className="links">
+        <Link to="/map">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/854/854980.png"
+            className="map"
+            alt="map"
+          />
+        </Link>
+        <Link to="/checkpoints">
+          <img
+            src="https://cdn.discordapp.com/attachments/1047544934644854875/1048930362211962880/libreria.png"
+            className="checkpoint"
+            alt="checkpoint"
+          />
+        </Link>
+        <Link to="/home">
+          <img
+            src="https://img.icons8.com/ios7/12x/home.png"
+            className="home"
+            alt="home"
+          />
+        </Link>
+        <Link to="/books">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/130/130304.png"
+            className="books"
+            alt="book"
+          />
+        </Link>
+        <Link to="/create">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1250/1250616.png"
+            className="create"
+            alt="create"
+          />
+        </Link>
+      </div>
     </div>
   );
 };

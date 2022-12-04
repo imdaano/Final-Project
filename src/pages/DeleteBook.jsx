@@ -5,11 +5,11 @@ import ReusableButton from "../components/Button";
 import { deleteBook } from "../redux/books/books.functions";
 
 const DeleteBook = () => {
-  const { register, handleSubmit } = useForm();
-  const dispatch = useDispatch();
-  const { books, error, isLoading } = useSelector((state) => state.books);
+const { register, handleSubmit } = useForm();
+const dispatch = useDispatch();
+const { books, error, isLoading } = useSelector((state) => state.books);
 
-  const removeBook = async(formdata) => {
+  const removeBook = (formdata) => {
     dispatch(deleteBook(formdata, books));
   };
   return (
@@ -32,5 +32,6 @@ const DeleteBook = () => {
     </div>
   );
 };
+
 
 export default DeleteBook;
