@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import './styles/MapView.scss';
 import Markers from "./Markers";
 import { getCheckpoints } from "../redux/checkpoint/checkpoint.functions";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +29,7 @@ const MapView = () => {
   }, []);
 
   return (
-    <>
+    <div className="mapview">
       {state && (
         <MapContainer
           center={state.location.coordinates}
@@ -49,7 +50,7 @@ const MapView = () => {
           {state && <Markers place={state} />}
         </MapContainer>
       )}
-    </>
+    </div>
   );
 };
 

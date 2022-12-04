@@ -1,5 +1,5 @@
+import './styles/Create.scss';
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import NewBook from './NewBook';
 import NewCheckpoint from './NewCheckpoint';
 
@@ -9,7 +9,7 @@ const Create = () => {
 
   return (
     <div className="create">
-    <div>
+    <div className='button--box'>
         <button onClick={() => setShow("newbook")}>New Book</button>
         <button onClick={() => setShow("newcheckpoint")}>New Checkpoint</button>
       </div>
