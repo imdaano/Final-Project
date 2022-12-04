@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import ReusableButton from "../components/Button";
-import { putCheckpoint } from "../redux/books/books.functions";
+import { putCheckpoint } from "../redux/checkpoint/checkpoint.functions";
 
 const EditCheckpoint = () => {
   const {
@@ -11,12 +11,12 @@ const EditCheckpoint = () => {
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  const { checkpoint, error, isLoading } = useSelector((state) => state.books);
+  const { checkpoint, error, isLoading } = useSelector((state) => state.checkpoints);
   const editCheckpoint = (formdata) => {
     formdata.img = formdata.img[0];
     dispatch(putCheckpoint(checkpoint._id, formdata));
   };
-
+//corregir -> hacer un map de los checkpoints y luego un for del array de coordenadas???
   return (
     <div className="editCheckpoint">
       <div>
