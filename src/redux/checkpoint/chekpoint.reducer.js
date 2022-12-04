@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   checkpoints: [],
-  checkpoint: {},
+  checkpoint: false,
   isLoading: false,
   error: false,
 };

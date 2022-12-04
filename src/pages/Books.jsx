@@ -27,7 +27,7 @@ const Books = () => {
             {books &&
               books.map((book) => {
                 return (
-                  <div className="book_card" key={book.title}>
+                  <div className="book_card" key={JSON.stringify(book)}>
                     <h2>{book.title}</h2>
                     <img src={book.img} alt={book.title} />
                     <ReusableButton

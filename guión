@@ -11,6 +11,8 @@
 - Mensaje en register "Este email ya existe o ya está siendo utilizado"
 - Buscador (books y checkpoints)
 - Botón (icono o botón) para crear elementos(books y checkpoints) en cada sección. "Nuevo..." (✅)
+- asignar los roles
+
 
 
 ==>ESTILOS
@@ -26,5 +28,7 @@ En los details ya nos explayamos, pero la foto más pequeña
 
 
 ==>PREGUNTAR A SANTI
-- defaultValue en el put checkpoint formulario 
+- defaultValue en el put checkpoint formulario coordenadas
 - get después del put
+- las fotos a veces cargan y a veces, no...tanto al crear como al hacer el get
+

@@ -40,7 +40,7 @@ const bookReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false,
-        books: action.payload,
+        books: [...state.books, action.payload],
         error: false,
       };
 

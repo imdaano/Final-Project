@@ -17,10 +17,9 @@ export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
   dispatch({ type: "gettingCheckpoint" });
 
   try {
-    const checkpointInfo = checkpoints.filter(
-      (checkpoint) => checkpoint.name === name
-    );
-    dispatch({ type: "getCheckpoint", payload: checkpointInfo[0] });
+    const res = await API.get(`/checkpoints/name/${name}`)
+    console.log(res.data);
+    dispatch({ type: "getCheckpoint", payload: res.data});
   } catch (error) {
     dispatch({ type: "errorCheckpoint", payload: error.message });
   }

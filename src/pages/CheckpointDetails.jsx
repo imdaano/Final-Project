@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import ReusableButton from "../components/Button";
 import {
   deleteCheckpoint,
   getOneCheckpoint,
 } from "../redux/checkpoint/checkpoint.functions";
+import { deleteAlert } from "./Alerts";
 import "./styles/CheckpointDetail.scss";
 
 const CheckpointDetail = () => {
@@ -60,10 +62,15 @@ const CheckpointDetail = () => {
               />
               {checkpoint.address}
             </p>
-              {/* <p><img
+            {console.log(checkpoint)}
+            <p>
+              <img
                 src="/assetsFront/images/brújula.png"
                 alt={checkpoint.location.coordinates}
-              />{checkpoint.location.coordinates}</p> */}
+              />
+              {checkpoint.location.coordinates}
+            </p>
+
             <p>
               <img
                 src="/assetsFront/images/icons8-teléfono-48.png"
@@ -84,12 +91,24 @@ const CheckpointDetail = () => {
       <div className="action--btns">
         <ReusableButton
           clase={"delete--btn"}
-          click={() => dispatch(deleteCheckpoint(checkpoint._id, dispatch))}
-          text={<img src="/assetsFront/images/delete.png" alt="delete"/>}
+          click={() => dispatch(deleteCheckpoint(checkpoint._id))}
+          // click={() => {
+          //   const function1 = dispatch(
+          //     deleteCheckpoint(checkpoint._id)
+          //   );
+          //   const function2 = deleteAlert(swal);
+          //   function1();
+          //   function2();
+          // }}
+          text={<img src="/assetsFront/images/delete.png" alt="delete" />}
         />
         <ReusableButton
           clase={"update--btn"}
-          text={<Link to={"/editCheckpoint"}><img src="/assetsFront/images/update.png" alt="update"/></Link>}
+          text={
+            <Link to={"/editCheckpoint"}>
+              <img src="/assetsFront/images/update.png" alt="update" />
+            </Link>
+          }
         />
       </div>
     </div>
