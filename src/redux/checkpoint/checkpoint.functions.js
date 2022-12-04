@@ -1,7 +1,7 @@
 import { API, API2 } from "../../shared/services/api";
 
 export const getCheckpoints = () => async (dispatch) => {
-  dispatch({ type: "gettingACheckpoints" });
+  dispatch({ type: "gettingCheckpoints" });
 
   try {
     const res = await API.get("/checkpoints");
@@ -11,11 +11,14 @@ export const getCheckpoints = () => async (dispatch) => {
     dispatch({ type: "errorCheckpoints", payload: error.message });
   }
 };
+
 export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
   dispatch({ type: "gettingCheckpoint" });
 
   try {
-    const checkpointInfo = checkpoints.filter((checkpoint) => checkpoint.name === name);
+    const checkpointInfo = checkpoints.filter(
+      (checkpoint) => checkpoint.name === name
+    );
     dispatch({ type: "getCheckpoint", payload: checkpointInfo[0] });
   } catch (error) {
     dispatch({ type: "errorCheckpoint", payload: error.message });
@@ -24,29 +27,29 @@ export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
 
 //? Terminar de corregir functions de checkpoints
 
-export const postNewCheckpoint = (dataForm) => async(dispatch) => {
+export const postNewCheckpoint = (dataForm) => async (dispatch) => {
   dispatch({ type: "postingCheckpoint" });
   try {
     const res = await API2.post("/checkpoints/create", dataForm);
     // res.data.inFavorites = false;
     // checkpoints.push(res.data); //dudas
     console.log(res);
-    dispatch({ type: "postCheckpoint"});
+    dispatch({ type: "postCheckpoint" });
   } catch (error) {
     dispatch({ type: "errorPostCheckpoint", payload: error });
   }
 };
 
-export const putCheckpoint = (id, dataForm) => async(dispatch) => {
-  dispatch({ type: 'puttingCheckpoint'});
+export const putCheckpoint = (id, dataForm) => async (dispatch) => {
+  dispatch({ type: "puttingCheckpoint" });
   try {
     const res = await API2.put(`/checkpoints/edit/${id}`, dataForm);
     console.log(res);
-    dispatch({ type: 'putCheckpoint'});
+    dispatch({ type: "putCheckpoint" });
   } catch (error) {
-    dispatch({ type: 'errorPutCheckpoint', payload: error})
+    dispatch({ type: "errorPutCheckpoint", payload: error });
   }
-}
+};
 
 export const deleteCheckpoint = (id) => async (dispatch) => {
   dispatch({ type: "deletingCheckpoint" });

@@ -16,6 +16,7 @@ const Books = () => {
       <main>
         <div className="books">
           <h1>Books</h1>
+          <div className="container--cards">
           {isLoading && (<img src="../../public/assetsFront/images/book-90.gif" alt="loading"/>)}
           {error && error.message}
           {books &&
@@ -24,7 +25,6 @@ const Books = () => {
                 <div className="book_card" key={book.title}>
                   <h2>{book.title}</h2>
                   <img src={book.img} alt={book.title} />
-                  {/* <button onClick={() => dispatch(deleteBook(book._id, dispatch))}>Eliminar</button> */}
                   <ReusableButton
                     clase={"book--btn"}
                     text={<Link to={`/books/${book.title}`}>Ver más</Link>}
@@ -32,6 +32,8 @@ const Books = () => {
                 </div>
               );
             })};
+
+          </div>
         </div>
       </main>
     </div>
