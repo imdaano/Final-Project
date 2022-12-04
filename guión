@@ -1,8 +1,8 @@
-- loggin con mail||username
+- loggin con mail||username - MAYBE
 - gestionar mensajes de error y confirmación en pantalla (con alerts, en color rojo, popups...lo que se nos ocurra)
 - Privatizar rutas y/o elementos
 - Modo oscuro/claro (con un estado?) -> Librería Chakra
-- Panel de ajustes de la app??
+- Panel de ajustes de la app?? (NO)
 - Cambiar marcadores del mapa para diferenciar 
 - Enlazar términos de uso con algún documento
 - Formulario checkpoints (coordenadas geográficas)/put y post
