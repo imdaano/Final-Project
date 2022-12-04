@@ -1,5 +1,6 @@
 import { API, API2 } from "../../shared/services/api";
 
+
 export const getCheckpoints = () => async (dispatch) => {
   dispatch({ type: "gettingCheckpoints" });
 
@@ -40,12 +41,13 @@ export const postNewCheckpoint = (dataForm) => async (dispatch) => {
   }
 };
 
-export const putCheckpoint = (id, dataForm) => async (dispatch) => {
+export const putCheckpoint = (id, dataForm, navigate) => async (dispatch) => {
   dispatch({ type: "puttingCheckpoint" });
   try {
     const res = await API2.put(`/checkpoints/edit/${id}`, dataForm);
     console.log(res);
     dispatch({ type: "putCheckpoint" });
+    navigate('/checkpoints')
   } catch (error) {
     dispatch({ type: "errorPutCheckpoint", payload: error });
   }

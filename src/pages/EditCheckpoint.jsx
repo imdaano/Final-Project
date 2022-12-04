@@ -17,7 +17,7 @@ const EditCheckpoint = () => {
     formdata.img = formdata.img[0];
     dispatch(putCheckpoint(checkpoint._id, formdata));
   };
-//corregir -> hacer un map de los checkpoints y luego un for del array de coordenadas???
+
   return (
     <div className="create">
       <div>
@@ -49,21 +49,24 @@ const EditCheckpoint = () => {
           </label>
           {errors.img && <p>{errors.img.message}</p>}
           <label>
-            <p>Coordenadas Geográficas</p>
+            Latitud
             <input
-              type="[number]"
-              name="location.coordinates"
-              defaultValue={checkpoint.location.coordinates[0]}
-              {...register("location.coordinates")}
+              type="text"
+              name="latitud"
+              // defaultValue={checkpoint.location.latitud}
+              {...register("latitud")}
             />
-            <input
-              type="[number]"
-              name="location.coordinates"
-              defaultValue={checkpoint.location.coordinates[1]}
-              {...register("location.coordinates")}
+            </label>
+            <label>
+              Longitud
+               <input
+              type="text"
+              name="longitud"
+              // defaultValue={checkpoint.location.longitud}
+              {...register("longitud")}
             />
-          </label>
-          <label>
+            </label>
+           <label>
             <p>Dirección</p>
             <input
               type="text"

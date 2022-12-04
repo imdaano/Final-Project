@@ -35,11 +35,13 @@
   }
 
   .back--btn{
-       background: transparent;
-    .back--btn--class{
+    padding: 10px;
+      .back--btn--class{
+        background: transparent;
+        border: none;
         
        a img{
-            width: 20px;
+            width: 30px;
         }
     }
   }

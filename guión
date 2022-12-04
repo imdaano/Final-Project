@@ -5,7 +5,7 @@
 - Panel de ajustes de la app?? (NO)
 - Cambiar marcadores del mapa para diferenciar 
 - Enlazar términos de uso con algún documento
-- Formulario checkpoints (coordenadas geográficas)/put y post
+- Formulario checkpoints (coordenadas geográficas)/put y post (SANTI)
 - Favoritos (Mis libros)
 - Vaivén de libros
 - Mensaje en register "Este email ya existe o ya está siendo utilizado"
@@ -23,4 +23,8 @@ En los details ya nos explayamos, pero la foto más pequeña
 - Un perfil de usuario con avatar seleccionable y el resto de la info abajo. Mis libros(favs)
 - colores más claros (por si usamos lal librería de chakras para el tema oscuro tb)
 - ¿Botones de eliminar/actuaizar/ver más con iconos? Se puede poner igualmente el texto
--   
+
+
+==>PREGUNTAR A SANTI
+- defaultValue en el put checkpoint formulario
+- get después del put
