@@ -6,16 +6,21 @@
 - Cambiar marcadores del mapa para diferenciar 
 - Enlazar términos de uso con algún documento
 - Formulario checkpoints (coordenadas geográficas)/put y post
-- Favoritos
+- Favoritos (Mis libros)
 - Vaivén de libros
 - Mensaje en register "Este email ya existe o ya está siendo utilizado"
 - Buscador (books y checkpoints)
+- Botón (icono o botón) para crear elementos(books y checkpoints) en cada sección. "Nuevo..."
+
 
 ==>ESTILOS
 - Botón de back con un icono de flecha en la parte superior izquierda
 - Botones de rutas principales que ocupan toda la pantalla
 - registro/loggin como en la foto
 - Títulos de cada sección más visuales, con imágenes, fijos en la parte superior
-- Tanto las secciones de Books como Checkpoints más pequeños, rectangulares, con la foto a la izquierda y la información a la derecha. En los details ya nos explayamos
+- Tanto las secciones de Books como Checkpoints más pequeños, rectangulares, con la foto a la izquierda y la información a la derecha. 
+En los details ya nos explayamos, pero la foto más pequeña
 - Un perfil de usuario con avatar seleccionable y el resto de la info abajo. Mis libros(favs)
-- 
+- colores más claros (por si usamos lal librería de chakras para el tema oscuro tb)
+- ¿Botones de eliminar/actuaizar/ver más con iconos? Se puede poner igualmente el texto
+-   
