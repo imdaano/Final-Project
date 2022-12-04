@@ -2,8 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
 import ReusableButton from "../components/Button";
-import { deleteBook, getOneBook, putBook } from "../redux/books/books.functions";
-import './styles/BookInfo.scss';
+import {
+  deleteBook,
+  getOneBook,
+  putBook,
+} from "../redux/books/books.functions";
+import "./styles/BookInfo.scss";
 
 const BookInfo = () => {
   const { title } = useParams();
@@ -40,14 +44,15 @@ const BookInfo = () => {
       )}
       <div className="action--btns">
         <ReusableButton
+          clase={"delete--btn"}
           click={() => dispatch(deleteBook(book._id, dispatch))}
           text={"Eliminar"}
         />
-        <ReusableButton click={() => dispatch(putBook(book._id, dispatch))}
-        text={<Link to={"/editBook"}>Actualizar</Link>}
+        <ReusableButton
+          clase={"update--btn"}
+          text={<Link to={"/editBook"}>Actualizar</Link>}
         />
-{/*Botón acualizar cuando tengamos la función hecha*/}
-        
+        {/*Botón acualizar cuando tengamos la función hecha*/}
       </div>
       <div className="back--btn">
         <ReusableButton

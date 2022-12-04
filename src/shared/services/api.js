@@ -12,7 +12,7 @@ const APIHeaders = {
 };
 
 export const API = axios.create({
-    baseURL: "https://backend-final-project-flame.vercel.app/",
+    baseURL: "http://localhost:4000/",
     timeout: 5000,
     headers: APIHeaders
 });
@@ -30,7 +30,7 @@ const APIHeaders2 = {
 };
 
 export const API2 = axios.create({
-    baseURL: "https://backend-final-project-flame.vercel.app/",
+    baseURL: "http://localhost:4000/",
     timeout: 5000,
     headers: APIHeaders2
 });

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Link to="/coords" >
+      <Link to="/map" >
         <img src="https://cdn-icons-png.flaticon.com/512/854/854980.png" className="map" alt="map"/>
       </Link>
       <Link to="/checkpoints" >

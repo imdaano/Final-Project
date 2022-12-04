@@ -17,11 +17,11 @@ const PutBook = () => {
     
     const editBook = (dataForm) => {
         const formData = new FormData();
-        formData.append('title', dataForm.get('title'));
-        formData.append('img', dataForm.get('img'));
-        formData.append('author', dataForm.get('author'));
-        formData.append('genre', dataForm.get('genre'));
-        formData.append('synopsis', dataForm.get('synopsis'));
+        formData.append('title', dataForm.getBookById('title'));
+        formData.append('img', dataForm.getBookById('img'));
+        formData.append('author', dataForm.getBookById('author'));
+        formData.append('genre', dataForm.getBookById('genre'));
+        formData.append('synopsis', dataForm.getBookById('synopsis'));
         dispatch(putBook(formData, navigate))
     }
 
