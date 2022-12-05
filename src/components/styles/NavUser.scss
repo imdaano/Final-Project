@@ -2,11 +2,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  // position: fixed;
-  // z-index: 1;
-  height: 60px;
+  position: fixed;
+  z-index: 1;
+  height: 8vh;
   width: 100%;
-  // background-color: rgb(155, 64, 64);
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
 
   a img {
     padding: 10px;
