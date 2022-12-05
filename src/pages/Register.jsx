@@ -118,10 +118,10 @@ const Register = () => {
               )}
             </>
           ) : null}
-          <label>
+          {/* <label>
             Repeat password
             <input type="password" />
-          </label>
+          </label> */}
           <ReusableButton text={"Submit"} />
         </form>
       </div>

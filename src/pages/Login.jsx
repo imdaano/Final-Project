@@ -77,11 +77,11 @@ const Login = () => {
           ) : null}
           <ReusableButton text={"Submit"} />
         </form>
-        <div className="navigate">
+        {/* <div className="navigate">
           <p>Click here to </p>
           <h2>-</h2>
           <Link to="/register">Register</Link>
-        </div>
+        </div> */}
       </div>
     </div>
     </div>
