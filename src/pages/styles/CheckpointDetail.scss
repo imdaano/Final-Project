@@ -22,19 +22,27 @@
           border-radius: 20px;
         }
       }
+
     }
     .checkpoint--card--info {
       padding: 1rem;
       background-color: rgba(22, 22, 22, 0.199);
-
-      p {
-      display: flex;
-      align-items: center;
       
+      p {
+        display: flex;
+        align-items: center;
+        
         img {
           padding: 5px;
           width: 30px;
         }
+      }
+
+      .checkbooks--container{
+        display: flex;
+        align-items: center;
+        
+        
       }
     }
   }
