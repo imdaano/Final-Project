@@ -16,6 +16,7 @@ const CheckpointDetail = () => {
   const { checkpoint, checkpoints, isLoading, error } = useSelector(
     (state) => state.checkpoints
   );
+  const checkpointBooks = checkpoint.books;
 
   useEffect(() => {
     dispatch(getOneCheckpoint(name, checkpoints));
@@ -78,13 +79,25 @@ const CheckpointDetail = () => {
               />
               {checkpoint.phone}
             </p>
-            <p>
-              <img
-                src="/assetsFront/images/icons8-libros-48.png"
-                alt={checkpoint.books}
-              />
-              {checkpoint.books}
-            </p>
+
+            {checkpointBooks &&
+              checkpointBooks.map((checkpointBook) => {
+                return (
+                  <div
+                    key={JSON.stringify(checkpointBook)}
+                    className="checkbooks--container"
+                  >
+                    <img
+                      src="/assetsFront/images/icons8-libros-48.png"
+                      alt={checkpoint.books}
+                    />
+                    <div className="checkbooks--info">
+                      <h4>Title: {checkpointBook.title}</h4>
+                      <p>Author: {checkpointBook.author}</p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       )}
