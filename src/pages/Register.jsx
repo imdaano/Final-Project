@@ -140,7 +140,6 @@ const Register = () => {
             {enterPhone && <ReusableButton text={"Submit"} />}
             {/*Poner select para la elección del avatar*/}
             {/* <ReusableButton text={"Submit"} /> */}
-
             {/* <ReusableButton text={"Submit"} /> */}
           </form>
         </div>
