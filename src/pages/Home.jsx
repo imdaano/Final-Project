@@ -24,13 +24,12 @@ const Home = () => {
         clase={"button--myaccount"}
         text={<Link to="/myAccount">My Account</Link>}
       /> */}
-<<<<<<< HEAD
-      
-=======
+
       <h1>
         Home
       </h1>
->>>>>>> 7ed041229dfbed4db08f627840555121a4811691
+
+
     </div>
     </div>
     

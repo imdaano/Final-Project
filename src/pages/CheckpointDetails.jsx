@@ -37,7 +37,7 @@ const CheckpointDetail = () => {
         <h1>Information</h1>
       </div>
       {isLoading && (
-        <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
+        <img src="assetsFront/images/book-90.gif" alt="loading" />
       )}
       {error && error.message}
       {checkpoint && (
