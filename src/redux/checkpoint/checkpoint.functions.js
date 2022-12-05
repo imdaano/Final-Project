@@ -13,7 +13,7 @@ export const getCheckpoints = () => async (dispatch) => {
   }
 };
 
-export const getOneCheckpoint = (name, checkpoints) => async (dispatch) => {
+export const getOneCheckpoint = (name) => async (dispatch) => {
   dispatch({ type: "gettingCheckpoint" });
 
   try {

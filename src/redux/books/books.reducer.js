@@ -78,16 +78,16 @@ const bookReducer = (state = INITIAL_STATE, action) => {
     case "catchingBook":
       return { ...state, isLoading: true };
 
-    case "catchBook":
-      return {
-        ...state,
-        isLoading: false,
-        books: [...action.payload],
-        error: false,
-      };
+    // case "catchBook":
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     books: [...action.payload],
+    //     error: false,
+    //   };
 
     case "errorCatchingBook":
-      return { ...state, isLoading: false, books: [], error: action.payload };
+      return { ...state, isLoading: false, /*books: [],*/ error: action.payload };
 
     case "droppingBook":
       return { ...state, isLoading: true };
@@ -101,7 +101,7 @@ const bookReducer = (state = INITIAL_STATE, action) => {
       };
 
     case "errorDroppingBook":
-      return { ...state, isLoading: false, books: [], error: action.payload };
+      return { ...state, isLoading: false, /*books: [],*/ error: action.payload };
 
     default:
       return state;

@@ -1,4 +1,6 @@
 import { API, API2 } from "../../shared/services/api";
+import { getUserById } from "../auth/auth.functions";
+import { getOneCheckpoint } from "../checkpoint/checkpoint.functions";
 // import { API2 } from "../../shared/services/api";
 
 export const getBooks = () => async (dispatch) => {
@@ -70,45 +72,49 @@ export const deleteBook = (id, navigate) => async (dispatch) => {
   }
 };
 
-export const catchBook = (dataForm, navigate) => async(dispatch) => {
-  dispatch({ type: 'catchingBook' });
-  try {
-    const checkpoint = await API.get('/checkpoints/'+ dataForm.checkpointId);
-    const books = checkpoint.books;
-    const indexToDelete = checkpoint.books.indexOf(dataForm.book._id);
-    books.splice(indexToDelete, 1);
-    checkpoint.books = books;
-    await API.put('/checkpoints/edit/' + dataForm.checkpointId, checkpoint)
-    const user = await API.get('/users/' + dataForm.userId)
-    const userBooks = user.books;
-    userBooks.push(dataForm.book._id)
-    user.books = userBooks;
-    await API.put('/users/edit/' + dataForm.userId, user);
-    dispatch({ type: 'catchBook' })
-    navigate('/myAccount')
-  } catch (error) {
-    dispatch({ type: 'errorCatchingBook' })
-  }
-};
+export const catchBook =
+  (checkpointId, bookId, userId, checkpointName, navigate) =>
+  async (dispatch) => {
+    dispatch({ type: "catchingBook" });
+    try {
+      //sacar libro del checkpoint
+      const checkpoint = await API.get("/checkpoints/" + checkpointId);
+      const books = checkpoint.books;
+      const indexToDelete = books.indexOf(bookId);
+      books.splice(indexToDelete, 1);
+      const newBooks = { books: books };
+      await API.put("/checkpoints/edit/" + checkpointId, newBooks);
+      dispatch(getOneCheckpoint(checkpointName));
 
-//Dudas con la función del drop: es necesario un formulario??
-export const dropBook = (dataForm, navigate) => async(dispatch) => {
-dispatch({ type: 'droppingBook '});
-  try {
-    const user = await API.get('/users/' + dataForm.userId)
-    const userBooks = user.books;
-    userBooks.splice(0, 1); //preguntar cómo limitamos el número de libros x usuario a 1 unidad
-    user.books = userBooks;
-    await API.put('users/edit/' + dataForm.userId, user)
-    const checkpoint = await API.get('checkpoints/' + dataForm.checkpointId);
-    const books = checkpoint.books;
-    books.push(dataForm.book._id);
-    checkpoint.books = books;
-    await API.put('/checkpoints/edit/' + dataForm.checkpointId, checkpoint)
-    dispatch({ type: 'dropBook'});
-    navigate(`/checkpoints/${checkpoint.name}`)
+      //A partir de aquí estamos metiendo el libro en un usuario
+      const newUserBook = { book: bookId };
+      await API.put("/users/edit/" + userId, newUserBook);
+      dispatch(getUserById(userId));
+      navigate("/myAccount");
+    } catch (error) {
+      dispatch({ type: "errorCatchingBook" });
+    }
+  };
+//cuando llamemos a las funciones tenemos que pasarle TODOS parámetros en el mismo orden
 
-  } catch (error) {
-    dispatch({ type: 'errorDroppingBook'})
-  }
-};
+export const dropBook =
+  (checkpointId, bookId, userId, checkpointName, navigate) =>
+  async (dispatch) => {
+    dispatch({ type: "droppingBook " });
+    try {
+      const user = await API.get("/users/" + userId);
+      const userBook = user.book;
+      delete userBook[bookId];
+      const newUserBook = { book: {} };
+      await API.put("users/edit/" + userId, newUserBook);
+      dispatch(getUserById(userId));
+
+      const newCheckpointBooks = { books: bookId };
+      newCheckpointBooks.push(bookId);
+      await API.put("/checkpoints/edit/" + checkpointId, newCheckpointBooks);
+      dispatch(getOneCheckpoint(checkpointId));
+      navigate(`/checkpoints/${checkpointName}`);
+    } catch (error) {
+      dispatch({ type: "errorDroppingBook" });
+    }
+  };
