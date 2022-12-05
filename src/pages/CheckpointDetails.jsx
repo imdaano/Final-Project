@@ -7,7 +7,7 @@ import {
   deleteCheckpoint,
   getOneCheckpoint,
 } from "../redux/checkpoint/checkpoint.functions";
-import { deleteAlert } from "./Alerts";
+// import { deleteAlert } from "./Alerts";
 import "./styles/CheckpointDetail.scss";
 
 const CheckpointDetail = () => {
@@ -96,7 +96,7 @@ const CheckpointDetail = () => {
           //   const function1 = dispatch(
           //     deleteCheckpoint(checkpoint._id)
           //   );
-          //   const function2 = deleteAlert(swal);
+          //   const function2 = deleteAlert();
           //   function1();
           //   function2();
           // }}
