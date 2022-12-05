@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import ReusableButton from "../components/Button";
 import {
   deleteCheckpoint,

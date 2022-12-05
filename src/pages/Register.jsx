@@ -5,15 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { newUser } from "../redux/auth/auth.functions";
 import ReusableButton from "../components/Button";
+// import ReusableButton from "../components/Button";
 
 const Register = () => {
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const incluirTelefono = watch("incluirTelefono");
 
   const { error, isLoading } = useSelector((state) => state.auth);
 
@@ -29,7 +33,7 @@ const Register = () => {
         {error && <h2 className="error">{error}</h2>}
         {isLoading && <h2 className="loading">Registering user</h2>}
         <form onSubmit={handleSubmit(registerUser)}>
-          <h1>Register</h1>git
+          <h1>Register</h1>
           <label>
             Email
             <input
@@ -121,8 +125,13 @@ const Register = () => {
             Repeat password
             <input type="password" />
           </label>
+          <div className="user-box-terms">
+            <a href="#">Términos de uso</a>
+            <input type="checkbox" {...register("incluirTelefono")} className="checkbox"/>
+          </div>
+         {incluirTelefono && <ReusableButton text={"Submit"}/>}
           {/*Poner select para la elección del avatar*/}
-          <ReusableButton text={"Submit"} />
+          {/* <ReusableButton text={"Submit"} /> */}
         </form>
       </div>
     </div>
