@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import ReusableButton from "../components/Button";
 import {
   deleteCheckpoint,
   getOneCheckpoint,
 } from "../redux/checkpoint/checkpoint.functions";
-import { deleteAlert } from "./Alerts";
+// import { deleteAlert } from "./Alerts";
 import "./styles/CheckpointDetail.scss";
 
 const CheckpointDetail = () => {
@@ -96,7 +96,7 @@ const CheckpointDetail = () => {
           //   const function1 = dispatch(
           //     deleteCheckpoint(checkpoint._id)
           //   );
-          //   const function2 = deleteAlert(swal);
+          //   const function2 = deleteAlert();
           //   function1();
           //   function2();
           // }}
