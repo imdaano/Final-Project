@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { newUser } from "../redux/auth/auth.functions";
 import ReusableButton from "../components/Button";
 
+
 const Register = () => {
   const {
     register,
@@ -121,7 +122,6 @@ const Register = () => {
             Repeat password
             <input type="password" />
           </label>
-          {/*Poner select para la elección del avatar*/}
           <ReusableButton text={"Submit"} />
         </form>
       </div>
