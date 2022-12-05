@@ -78,9 +78,9 @@ const Login = () => {
           <ReusableButton text={"Submit"} />
         </form>
         <div className="navigate">
-          <p>Click here to </p>
+          <p>New in Travelling Books? </p>
           <h2>-</h2>
-          <Link to="/register">Register</Link>
+          <Link to="/register">Sing Up!</Link>
         </div>
       </div>
     </div>

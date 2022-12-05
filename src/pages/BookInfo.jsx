@@ -47,7 +47,7 @@ const BookInfo = () => {
               <ReusableButton
                 clase={"delete--btn"}
                 click={() => dispatch(deleteBook(book._id, dispatch))}
-                text={"Eliminar"}
+                text={"Delete"}
               />
               <ReusableButton
                 clase={"update--btn"}

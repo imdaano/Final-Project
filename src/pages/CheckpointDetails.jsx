@@ -33,7 +33,7 @@ const CheckpointDetail = () => {
             </Link>
           }
         /> */}
-        <h1>Información</h1>
+        <h1>Information</h1>
       </div>
       {isLoading && (
         <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />

@@ -60,7 +60,7 @@ const NewBook = () => {
               })}
             />
           </label>
-          {errors.img ? <p>Adjunta una imagen</p> : null}
+          {errors.img ? <p>Upload an image</p> : null}
           <label>
             Author
             <input
@@ -71,7 +71,7 @@ const NewBook = () => {
               })}
             />
           </label>
-          {errors.author ? <p>Introduce el nombre de un/a autor/a</p> : null}
+          {errors.author ? <p>Enter the name of the author</p> : null}
 
           <label>
             Genre
@@ -83,7 +83,7 @@ const NewBook = () => {
               })}
             />
           </label>
-          {errors.genre ? <p>Introduce un género literario</p> : null}
+          {errors.genre ? <p>Enter a literary genre</p> : null}
           <label>
             Synopsis
             <textarea
@@ -95,7 +95,7 @@ const NewBook = () => {
             />
           </label>
           {errors.synopsis ? (
-            <p>Inserta una sinopsis en el área de texto</p>
+            <p>Insert a synopsis in the text area</p>
           ) : null}
 
           <ReusableButton clase={"newbook--btn"} text={"Crear"} />
