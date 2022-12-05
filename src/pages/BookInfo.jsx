@@ -20,10 +20,10 @@ const BookInfo = () => {
   return (
     <div className="bookInfo--main">
     <div className="back--btn">
-        <ReusableButton
-          clase={"back--btn--class"}
-          text={<Link to={"/books"}>Volver</Link>}
-        />
+      <Link to="/books">
+            <img src="https://cdn-icons-png.flaticon.com/512/8022/8022657.png" alt="goback"/>
+          </Link>
+        
       </div>
       {isLoading && (
         <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
