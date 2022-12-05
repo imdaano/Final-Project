@@ -12,6 +12,7 @@
 - Buscador (books y checkpoints)
 - Botón (icono o botón) para crear elementos(books y checkpoints) en cada sección. "Nuevo..." (✅)
 - asignar los roles
+-
 
 
 
@@ -24,11 +25,14 @@
 En los details ya nos explayamos, pero la foto más pequeña
 - Un perfil de usuario con avatar seleccionable y el resto de la info abajo. Mis libros(favs)
 - colores más claros (por si usamos lal librería de chakras para el tema oscuro tb)
-- ¿Botones de eliminar/actuaizar/ver más con iconos? Se puede poner igualmente el texto
+- ¿Botones de eliminar/actuaizar/ver más con iconos? Se puede poner igualmente el texto ✅
+- colores claros, por favor
 
 
 ==>PREGUNTAR A SANTI
-- defaultValue en el put checkpoint formulario coordenadas
-- get después del put
-- las fotos a veces cargan y a veces, no...tanto al crear como al hacer el get
+- defaultValue en el put checkpoint formulario coordenadas ✅
+- get después del put (+/-)
+- las fotos a veces cargan y a veces, no...tanto al crear como al hacer el get (+/-) -> meter fotos desde cloudinary
+- repasar funciones vaivén de libros
+- 
 
