@@ -1,4 +1,4 @@
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { /*useNavigate,*/ Link, useParams } from "react-router-dom";
@@ -19,23 +19,34 @@ const BookInfo = () => {
 
   return (
     <div className="bookInfo--main">
+    <div className="back--btn">
+        <ReusableButton
+          clase={"back--btn--class"}
+          text={<Link to={"/books"}>Volver</Link>}
+        />
+      </div>
       {isLoading && (
         <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
       )}
-      {error && error.message} {/*cambiar mensajes de error??*/}
+      {error && error.message}
       {book && (
         <div className="bookInfo">
           <div className="book--card">
             <h2>{book.title}</h2>
-            <div className="book--card--img">
-              <img src={book.img} alt={book.title} />
-            </div>
+            <img src={book.img} alt={book.title} />
           </div>
           <div className="book--card--info">
-            <p>Autor/a: {book.author}</p>
-            <p>Género: {book.genre}</p>
+            <div className="flex">
+              <h2>Autor/a:</h2>
+              <p>{book.author}</p>
+            </div>
+            <div className="flex">
+              <h2>Género:</h2>
+              <p>{book.genre}</p>
+            </div>
             <div className="book--card--synopsis">
-              <p>Sinopsis: {book.synopsis}</p>
+              <h2>Sinopsis:</h2>
+              <p>{book.synopsis}</p>
             </div>
           </div>
         </div>
@@ -47,7 +58,7 @@ const BookInfo = () => {
               <ReusableButton
                 clase={"delete--btn"}
                 click={() => dispatch(deleteBook(book._id, dispatch))}
-                text={"Eliminar"}
+                text={"Delete"}
               />
               <ReusableButton
                 clase={"update--btn"}
@@ -58,12 +69,6 @@ const BookInfo = () => {
         </>
       )}
       <div className="action--btns"></div>
-      <div className="back--btn">
-        <ReusableButton
-          clase={"back--btn--class"}
-          text={<Link to={"/books"}>Volver</Link>}
-        />
-      </div>
     </div>
   );
 };

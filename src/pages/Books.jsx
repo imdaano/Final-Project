@@ -32,7 +32,7 @@ const Books = () => {
                     <img src={book.img} alt={book.title} />
                     <ReusableButton
                       clase={"book--btn"}
-                      text={<Link to={`/books/${book.title}`}>Ver más</Link>}
+                      text={<Link to={`/books/${book.title}`}>More info</Link>}
                     />
                   </div>
                 );

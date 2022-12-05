@@ -24,7 +24,6 @@ const Home = () => {
         clase={"button--myaccount"}
         text={<Link to="/myAccount">My Account</Link>}
       /> */}
-      
     </div>
     </div>
     
