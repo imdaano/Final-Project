@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import swal from 'sweetalert';
 
 export const showAlert = () => {
@@ -39,4 +39,4 @@ const Alerts = () => {
   )
 }
 
-export default Alerts
+export default Alerts */

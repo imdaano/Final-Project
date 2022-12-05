@@ -88,7 +88,7 @@ const EditCheckpoint = () => {
             />
           </label>
           <label>
-            Length
+            Longitude
             <input
               type="text"
               name="longitud"

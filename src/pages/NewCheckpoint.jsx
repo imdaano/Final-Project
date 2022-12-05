@@ -44,7 +44,7 @@ const NewCheckpoint = () => {
               type="text"
               name="name"
               {...register("name", {
-                required: "Nombre del establecimiento",
+                required: "Checkpoint Name",
               })}
             />
           </label>
@@ -63,29 +63,29 @@ const NewCheckpoint = () => {
               })}
             />
           </label>
-          {errors.img ? <p>Adjunta una imagen</p> : null}
+          {errors.img ? <p>Upload an image</p> : null}
           <label>
             Latitude
             <input
               type="text"
               name="latitud"
               {...register("latitud", {
-                required: "Introduce las coordenadas",
+                required: "Enter the coordinates",
               })}
             />
           </label>
-          {errors.latitud ? <p>Introduce las coordenadas</p> : null}
+          {errors.latitud ? <p>Enter the coordinates</p> : null}
           <label>
-            Length
+            Longitude
             <input
               type="text"
               name="longitud"
               {...register("longitud", {
-                required: "Introduce las coordenadas",
+                required: "Enter the coordinates",
               })}
             />
           </label>
-          {errors.longitud ? <p>Introduce las coordenadas</p> : null}
+          {errors.longitud ? <p>Enter the coordinates</p> : null}
 
           <label>
             Address
@@ -93,24 +93,24 @@ const NewCheckpoint = () => {
               rows="3"
               name="address"
               {...register("address", {
-                required: "Introduce la dirección",
+                required: "Enter the direction",
               })}
             />
           </label>
-          {errors.genre ? <p>Introduce la dirección</p> : null}
+          {errors.genre ? <p>Enter the direction</p> : null}
           <label>
             Phone Number
             <input
               type="text"
               name="phone"
               {...register("phone", {
-                required: "Introduce el número de teléfono",
+                required: "Enter the phone number",
               })}
             />
           </label>
-          {errors.synopsis ? <p>Introduce el número de teléfono</p> : null}
+          {errors.synopsis ? <p>Enter the phone number</p> : null}
 
-          <ReusableButton clase={"newCheckpoint--btn"} text={"Crear"} />
+          <ReusableButton clase={"newCheckpoint--btn"} text={"Create"} />
         </form>
       </div>
     </div>
