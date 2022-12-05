@@ -19,7 +19,12 @@ const Checkpoints = () => {
       <main>
         <div className="checkpoints">
           <h1 className="title">Checkpoints</h1>
-          {isLoading && "Cargando"}
+          {isLoading && (
+            <img
+              src="assetsFront/images/book-90.gif"
+              alt="isLoading"
+            />
+          )}
           {error && error.message}
           {checkpoints &&
             checkpoints.map((checkpoint) => {
