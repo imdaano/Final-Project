@@ -2,19 +2,23 @@ import "./styles/UserForm.scss";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { newUser } from "../redux/auth/auth.functions";
 import ReusableButton from "../components/Button";
+// import ReusableButton from "../components/Button";
 
 
 const Register = () => {
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const enterPhone = watch("enterPhone");
 
   const { error, isLoading } = useSelector((state) => state.auth);
 
@@ -121,8 +125,17 @@ const Register = () => {
           {/* <label>
             Repeat password
             <input type="password" />
+          </label>
+          <div className="user-box-terms">
+            {/* <a href="#">Use terms</a> */}
+            <Link to='/termsUse'>Use Terms</Link>
+            <input type="checkbox" {...register("enterPhone")} className="checkbox"/>
+          </div>
+         {enterPhone && <ReusableButton text={"Submit"}/>}
+          {/*Poner select para la elección del avatar*/}
+          {/* <ReusableButton text={"Submit"} /> */}
           </label> */}
-          <ReusableButton text={"Submit"} />
+         {/* <ReusableButton text={"Submit"} /> */}
         </form>
       </div>
     </div>

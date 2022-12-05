@@ -19,6 +19,7 @@ import MapView from "./components/MapView";
 import Favorites from "./pages/Favorites";
 import MyAccount from "./pages/MyAccount";
 import Navbar from "./components/Navbar";
+import TermsUse from "./pages/TermsUse";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/newCheckpoint" element={<NewCheckpoint />} />
           <Route path="/editCheckpoint" element={<EditCheckpoint />} />
           <Route path="/map" element={<MapView />} />
+          <Route path="/termsUse" element={<TermsUse />}/>
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/myAccount" element={<MyAccount />} />
         </Routes>

@@ -5,6 +5,7 @@ import './styles/MapView.scss';
 import Markers from "./Markers";
 import { getCheckpoints } from "../redux/checkpoint/checkpoint.functions";
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "./Navbar";
 
 const MapView = () => {
   const [state, setState] = useState();
