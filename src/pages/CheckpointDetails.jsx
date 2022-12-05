@@ -26,15 +26,14 @@ const CheckpointDetail = () => {
   return (
     <div className="checkpoint--detail">
       <div className="title">
-        {/* <ReusableButton
-          clase={"back--btn--class"}
-          text={
-            <Link to={"/checkpoints"}>
-              <img src="/assetsFront/images/back.png" alt="back" />
-            </Link>
-          }
-        /> */}
-        <h1>Information</h1>
+      <div className="back--btn">
+        <Link to="/checkpoints">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/8022/8022657.png"
+            alt="goback"
+          />
+        </Link>
+      </div>
       </div>
       {isLoading && (
         <img src="assetsFront/images/book-90.gif" alt="loading" />
@@ -42,11 +41,8 @@ const CheckpointDetail = () => {
       {error && error.message}
       {checkpoint && (
         <div className="checkpoint--info">
-          {/* <h2>{checkpoint.name}</h2> */}
-          <div className="checkpoint--card">
-            <div className="checkpoint--card--img">
-              <img src={checkpoint.img} alt={checkpoint.name} />
-            </div>
+          <div className="checkpoint--card">    
+              <img src={checkpoint.img} alt={checkpoint.name} />         
           </div>
           <div className="checkpoint--card--info">
             <p>
@@ -128,36 +124,3 @@ const CheckpointDetail = () => {
   );
 };
 export default CheckpointDetail;
-
-// import "./styles/CheckpointDetail.scss";
-// import React from "react";
-// import { useSelector } from "react-redux";
-// import { Link, useParams } from "react-router-dom";
-// import ReusableButton from "../components/Button";
-
-// const CheckpointDetails = () => {
-//   const { name } = useParams();
-//   const { checkpoints } = useSelector((state) => state.checkpoints);
-
-//   let checkpoint;
-
-//   checkpoints.map(
-//     (check) => (checkpoint = check.name === name ? check : checkpoint)
-//   );
-
-//   return (
-//     <div className="checkpoint--info">
-//       <div className="container">
-//         <h3>{checkpoint.name}</h3>
-//         <img src={checkpoint.img} alt={checkpoint.title} />
-//         <p>{checkpoint.location}</p>
-//         <p>{checkpoint.phone}</p>
-//         <Link to={"/"}>
-//           <ReusableButton text="All checkpoints" />
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CheckpointDetails;

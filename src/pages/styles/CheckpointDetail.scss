@@ -1,48 +1,55 @@
 .checkpoint--detail {
-  display: flex;
-  flex-direction: column;
-  
-  .title {
-   text-align: center;
-   padding-bottom: 10px;
+  margin-top: 50px;
+  padding: 20px;
+
+  .back--btn {
+    img {
+      width: 50px;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
   }
 
   .checkpoint--info {
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    background-color: rgb(58, 144, 197);
 
     .checkpoint--card {
-      .checkpoint--card--img {
-        width: 250px;
+      // text-align: center;
+
+      img {
+        width: 100%;
         height: 190px;
         padding: 5px;
-        img {
-          width: 100%;
-          border-radius: 20px;
-        }
+        width: 100%;
+        border-radius: 20px;
       }
-
     }
     .checkpoint--card--info {
-      padding: 1rem;
-      background-color: rgba(22, 22, 22, 0.199);
-      
+      margin-top: 10px;
+      line-height: 1.5;
+      padding: 5px;
+
       p {
         display: flex;
         align-items: center;
-        
+
         img {
           padding: 5px;
           width: 30px;
         }
       }
 
-      .checkbooks--container{
+      .checkbooks--container {
         display: flex;
         align-items: center;
-        
-        
       }
     }
   }
@@ -51,8 +58,8 @@
     display: flex;
     justify-content: space-evenly;
     padding: 0.9rem 2rem;
-    
-    button{
+
+    button {
       border-radius: 15px;
       width: 70px;
       height: 40px;
@@ -60,13 +67,12 @@
       img {
         width: 25px;
       }
-
     }
     .delete--btn {
-      background-color: rgba(248, 53, 53, 0.747);
+      background-color: rgba(255, 255, 255, 0.867);
     }
     .update--btn {
-      background-color: rgba(238, 241, 10, 0.89);
+      background-color: rgba(255, 255, 255, 0.89);
     }
   }
 }
