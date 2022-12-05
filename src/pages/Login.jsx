@@ -79,7 +79,6 @@ const Login = () => {
         </form>
         <div className="navigate">
           <p>New in Travelling Books? </p>
-          <h2>-</h2>
           <Link to="/register">Sing Up!</Link>
         </div>
 

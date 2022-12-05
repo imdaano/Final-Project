@@ -18,7 +18,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const enterPhone = watch("enterPhone");
+  const acceptTerms = watch("acceptTerms");
 
   const { error, isLoading } = useSelector((state) => state.auth);
 
@@ -132,12 +132,20 @@ const Register = () => {
           </label>
           < className="user-box-terms">
             {/* <a href="#">Use terms</a> */}
-            <Link to='/termsUse'>Use Terms</Link>
-            <input type="checkbox" {...register("enterPhone")} className="checkbox"/>
-         {enterPhone && <ReusableButton text={"Submit"}/>}
-          {/*Poner select para la elección del avatar*/}
-          {/* <ReusableButton text={"Submit"} /> */}
-        </form>
+            <div className="termsUse--box">
+              <Link to="/termsUse">Use Terms</Link>
+              <input
+                type="checkbox"
+                {...register("acceptTerms")}
+                className="checkbox"
+              />
+            </div>
+            {acceptTerms && <ReusableButton text={"Submit"} />}
+            {/*Poner select para la elección del avatar*/}
+            {/* <ReusableButton text={"Submit"} /> */}
+            {/* <ReusableButton text={"Submit"} /> */}
+          </form>
+        </div>
       </div>
     </div>
     </div>

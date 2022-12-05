@@ -1,4 +1,5 @@
 .books--container {
+
   .books {
     text-align: center;
     width: 100%;
@@ -29,9 +30,9 @@
 
       .book_card {
         color: rgb(0, 0, 0);
-        width: 180px;
-        height: 350px;
-        padding-inline: 2px;
+        width: 168px;
+        height: 220px;
+        // padding-inline: 2px;
         background-color: rgba(13, 85, 136, 0.622);
         display: flex;
         flex-direction: column;
@@ -46,20 +47,21 @@
         }
 
         img {
-          width: 180px;
-          height: 250px;
+          width: 100px;
+          height: 130px;
           padding: 1rem;
           border-radius: 30px;
         }
         .book--btn {
           width: 80px;
-          height: 30px;
+          height: 20px;
           border-radius: 10px;
           font-family: sans-serif;
           background-color: rgb(255, 255, 255);
           cursor: pointer;
 
           a {
+            text-decoration: none;
             color: black;
           }
 
