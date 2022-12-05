@@ -1,5 +1,4 @@
 .books--container {
- 
   .books {
     text-align: center;
     width: 100%;
@@ -10,21 +9,20 @@
     position: relative;
 
     .title {
-      background-color: grey;
+      color: rgb(5, 177, 196);
+      background-color: rgba(16, 62, 95, 0.919);
       height: 75px;
-      position: fixed;
-      z-index: 1;
-      width: 90%;
+      // position: fixed;
+      // z-index: -1;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      
     }
 
     .container--cards {
       width: 90%;
-      padding-top: 70px;
-      background-color: white;
+      padding-top: 50px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -34,31 +32,40 @@
         width: 180px;
         height: 350px;
         padding-inline: 2px;
-        background-color: rgb(156, 156, 156);
+        background-color: rgba(13, 85, 136, 0.622);
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
         align-items: center;
         margin: 5px;
-        border-radius: 3px;
+        border-radius: 20px;
 
         h2 {
-          font-size: 15px;
+          font-size: 12px;
         }
 
         img {
           width: 180px;
           height: 250px;
           padding: 1rem;
+          border-radius: 30px;
         }
         .book--btn {
-          border-radius: 2px;
+          width: 80px;
+          height: 30px;
+          border-radius: 10px;
           font-family: sans-serif;
-          background-color: rgb(245, 250, 206);
+          background-color: rgb(255, 255, 255);
+          cursor: pointer;
 
           a {
             color: black;
+          }
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.541);
+            color: white;
           }
         }
       }
