@@ -2,14 +2,24 @@
   margin-top: 50px;
   padding: 20px;
 
+  .back--btn {
+    img {
+      width: 50px;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+
   .bookInfo {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
-    background-color: rgba(23, 77, 142, 0.828);
+    border-radius: 20px;
+    background-color: rgb(58, 144, 197);
     .book--card {
       text-align: center;
 
