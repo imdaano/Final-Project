@@ -23,6 +23,18 @@ export const loginUser = async (formdata, navigate, dispatch) => {
 	}
 };
 
+export const getUserById = (id) => async (dispatch) => {
+    dispatch({ type: "get_userById_start" });
+
+    try {
+      const res = await API.get(`/users/${id}`)
+      console.log(res.data);
+      dispatch({ type: "get_userById_ok", payload: res.data});
+    } catch (error) {
+      dispatch({ type: "get_userById_error", payload: error.message });
+    }
+  }; 
+
 export const checkSession = async (token, navigate, dispatch) => {
 	dispatch({ type: "checkSession_start" });
 	try {

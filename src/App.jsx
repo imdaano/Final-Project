@@ -23,7 +23,7 @@ import TermsUse from "./pages/TermsUse";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <header>
         <NavUser />
       </header>
