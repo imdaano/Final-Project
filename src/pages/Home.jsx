@@ -25,9 +25,7 @@ const Home = () => {
         text={<Link to="/myAccount">My Account</Link>}
       /> */}
 
-      <h1>
-        Home
-      </h1>
+    
 
 
     </div>
