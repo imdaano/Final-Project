@@ -18,7 +18,7 @@ const Checkpoints = () => {
     <div className="checkpoint--container">
       <main>
         <div className="checkpoints">
-          <h1>Checkpoints</h1>
+          <h1 className="title">Checkpoints</h1>
           {isLoading && "Cargando"}
           {error && error.message}
           {checkpoints &&

@@ -7,6 +7,7 @@ import { newUser } from "../redux/auth/auth.functions";
 import ReusableButton from "../components/Button";
 // import ReusableButton from "../components/Button";
 
+
 const Register = () => {
   const {
     register,
@@ -121,7 +122,7 @@ const Register = () => {
               )}
             </>
           ) : null}
-          <label>
+          {/* <label>
             Repeat password
             <input type="password" />
           </label>
@@ -133,6 +134,8 @@ const Register = () => {
          {enterPhone && <ReusableButton text={"Submit"}/>}
           {/*Poner select para la elección del avatar*/}
           {/* <ReusableButton text={"Submit"} /> */}
+          </label> */}
+         {/* <ReusableButton text={"Submit"} /> */}
         </form>
       </div>
     </div>

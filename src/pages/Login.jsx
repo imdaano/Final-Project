@@ -82,6 +82,7 @@ const Login = () => {
           <h2>-</h2>
           <Link to="/register">Sing Up!</Link>
         </div>
+
       </div>
     </div>
     </div>

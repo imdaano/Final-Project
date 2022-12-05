@@ -32,6 +32,19 @@ const authReducer = (state = INITIAL_STATE, action) => {
 			return { ...state, isLoading: false, error: false };
 		case "register_user_error":
 			return { ...state, isLoading: false, error: action.payload };
+		
+			case "get_userById_start":
+			return { ...state, isLoading: true };
+		case "get_userById_ok":
+			return { ...state, isLoading: false, user: action.payload };
+		case "get_userById_error":
+			return { ...state, isLoading: false, error: action.payload };
+
+			case "logout_user_ok":
+				return { ...INITIAL_STATE };
+			case "logout_user_error":
+				return { ...state, isLoading: false, error: action.payload };
+			
 
 		case "checkSession_start":
 			return { ...state, isLoading: true, error: false };
@@ -46,10 +59,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
 		case "checkSession_error":
 			return { ...INITIAL_STATE };
 
-		case "logout_user_ok":
-			return { ...INITIAL_STATE };
-		case "logout_user_error":
-			return { ...state, isLoading: false, error: action.payload };
+			
 
 		default:
 			return state;

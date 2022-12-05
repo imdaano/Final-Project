@@ -15,7 +15,7 @@ const Books = () => {
     <div className="books--container">
       <main>
         <div className="books">
-          <h1>Books</h1>
+          <h1 className="title">Books</h1>
           <div className="container--cards">
             {isLoading && (
               <img

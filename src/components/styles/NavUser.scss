@@ -2,13 +2,19 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: fixed;
-  z-index: 1;
-  padding: 0.3rem ;
+  // position: fixed;
+  // z-index: 1;
   height: 60px;
   width: 100%;
-  img {
+  // background-color: rgb(155, 64, 64);
+
+  a img {
+    padding: 10px;
     width: 50px;
     height: 50px;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
