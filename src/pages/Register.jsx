@@ -24,7 +24,7 @@ const Register = () => {
 
   const registerUser = (formdata) => {
     console.log(formdata);
-    newUser(formdata, navigate, dispatch);
+    dispatch(newUser(formdata, navigate));
   };
 
   return (

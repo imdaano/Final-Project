@@ -16,6 +16,7 @@ const CheckpointDetail = () => {
   const { checkpoint, checkpoints, isLoading, error } = useSelector(
     (state) => state.checkpoints
   );
+  const { user } = useSelector((state) => state.auth)
   const checkpointBooks = checkpoint.books;
 
   useEffect(() => {

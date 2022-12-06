@@ -1,17 +1,17 @@
 import { API } from "../../shared/services/api";
 
-export const newUser = async (formdata, navigate, dispatch) => {
+export const newUser = (formdata, navigate) => async dispatch => {
 	dispatch({ type: "register_user_start" });
 	try {
-		await API.post("/users/register", formdata);
-		dispatch({ type: "register_user_ok" });
+		const res = await API.post("/users/register", formdata);
+		dispatch({ type: "register_user_ok", payload: res.data });
 		navigate("/login");
 	} catch (error) {
 		dispatch({ type: "register_user_error", payload: error.message });
 	}
 };
 
-export const loginUser = async (formdata, navigate, dispatch) => {
+export const loginUser = (formdata, navigate) => async dispatch => {
 	dispatch({ type: "login_user_start" });
 	try {
 		const res = await API.post("/users/login", formdata);
@@ -35,7 +35,7 @@ export const getUserById = (id) => async (dispatch) => {
     }
   }; 
 
-export const checkSession = async (token, navigate, dispatch) => {
+export const checkSession = (token, navigate) => async dispatch => {
 	dispatch({ type: "checkSession_start" });
 	try {
 		const res = await API.post("users/checkSession");

@@ -92,29 +92,30 @@ export const catchBook =
       dispatch(getUserById(userId));
       navigate("/myAccount");
     } catch (error) {
-      dispatch({ type: "errorCatchingBook" });
+      dispatch({ type: "errorCatchingBook", error });
     }
   };
 //cuando llamemos a las funciones tenemos que pasarle TODOS parámetros en el mismo orden
 
 export const dropBook =
-  (checkpointId, bookId, userId, checkpointName, navigate) =>
+  (checkpointId, bookId, userId, checkpoint, checkpointName, navigate) =>
   async (dispatch) => {
     dispatch({ type: "droppingBook " });
     try {
       const user = await API.get("/users/" + userId);
-      const userBook = user.book;
-      delete userBook[bookId];
-      const newUserBook = { book: {} };
-      await API.put("users/edit/" + userId, newUserBook);
+      // const userBook = user.book;
+      user.book = {};
+      // delete userBook.bookId;
+      // const newUserBook = { book: {} };
+      await API.put("users/edit/" + userId, user);
       dispatch(getUserById(userId));
 
-      const newCheckpointBooks = { books: bookId };
-      newCheckpointBooks.push(bookId);
-      await API.put("/checkpoints/edit/" + checkpointId, newCheckpointBooks);
+      const updatedCheckpoint = checkpoint ;
+      updatedCheckpoint.books.push(bookId);
+      await API.put("/checkpoints/edit/" + checkpointId, updatedCheckpoint);
       dispatch(getOneCheckpoint(checkpointId));
       navigate(`/checkpoints/${checkpointName}`);
     } catch (error) {
-      dispatch({ type: "errorDroppingBook" });
+      dispatch({ type: "errorDroppingBook", error });
     }
   };
