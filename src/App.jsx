@@ -1,6 +1,6 @@
 import "./App.scss";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import NavUser from "./components/NavUser";
 import Users from "./pages/Users";
@@ -20,14 +20,23 @@ import Favorites from "./pages/Favorites";
 import MyAccount from "./pages/MyAccount";
 import Navbar from "./components/Navbar";
 import TermsUse from "./pages/TermsUse";
+import { useDispatch } from "react-redux";
+import { checkSession } from "./redux/auth/auth.functions";
+import AuthRoute from "./components/AuthRoute"
 
 function App() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token') ?? '';
+    dispatch(checkSession(token, navigate))
+  }, []);
+
   return (
     <div className="app">
-      <header>
-        <NavUser />
-      </header>
-      <main>
+      <NavUser />
+      <main className="app--main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
@@ -43,14 +52,12 @@ function App() {
           <Route path="/newCheckpoint" element={<NewCheckpoint />} />
           <Route path="/editCheckpoint" element={<EditCheckpoint />} />
           <Route path="/map" element={<MapView />} />
-          <Route path="/termsUse" element={<TermsUse />}/>
+          <Route path="/termsUse" element={<TermsUse />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/myAccount" element={<MyAccount />} />
+          <Route path="/myAccount" element={<AuthRoute component ={<MyAccount />}/>} />
         </Routes>
       </main>
-      <nav>
-        <Navbar />
-      </nav>
+      <Navbar />
     </div>
   );
 }

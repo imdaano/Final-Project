@@ -19,8 +19,9 @@ const Books = () => {
           <div className="container--cards">
             {isLoading && (
               <img
-                src="../../public/assetsFront/images/book-90.gif"
+                src="../../public/assetsFront/images/loading.gif"
                 alt="loading"
+                className="loading"
               />
             )}
             {error && error.message}

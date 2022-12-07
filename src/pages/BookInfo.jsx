@@ -28,7 +28,7 @@ const BookInfo = () => {
         </Link>
       </div>
       {isLoading && (
-        <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
+        <img src="../../public/assetsFront/images/loading.gif" alt="loading" />
       )}
       {error && error.message}
       {book && (
@@ -39,15 +39,15 @@ const BookInfo = () => {
           </div>
           <div className="book--card--info">
             <div className="flex">
-              <h2>Autor/a:</h2>
+              <h2>Auhor/a:</h2>
               <p>{book.author}</p>
             </div>
             <div className="flex">
-              <h2>Género:</h2>
+              <h2>Genre:</h2>
               <p>{book.genre}</p>
             </div>
             <div className="book--card--synopsis">
-              <h2>Sinopsis:</h2>
+              <h2>Synopsis:</h2>
               <p>{book.synopsis}</p>
             </div>
           </div>

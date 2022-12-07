@@ -21,8 +21,9 @@ const Checkpoints = () => {
           <h1 className="title">Checkpoints</h1>
           {isLoading && (
             <img
-              src="assetsFront/images/book-90.gif"
+              src="assetsFront/images/loading.gif"
               alt="isLoading"
+              className="loading"
             />
           )}
           {error && error.message}

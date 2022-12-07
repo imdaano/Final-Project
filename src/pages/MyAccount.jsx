@@ -5,7 +5,7 @@ import './styles/MyAccount.scss';
 const MyAccount = () => {
 
   const {user} = useSelector((state) => state.auth);
-
+console.log(user);
   return (
     <div className='myaccount'>
       <div className="card">
@@ -19,6 +19,10 @@ const MyAccount = () => {
         <div className="info">
           <p>{user.name}</p>
           <h4>{user.email}</h4>
+        </div>
+        <div className='book'>
+          <h3>My book</h3>
+          {user.book && <img src={user.book.img} alt={user.book.title} />}
         </div>
       </div>
     </div>

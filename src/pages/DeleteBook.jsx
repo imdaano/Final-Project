@@ -16,7 +16,12 @@ const { books, error, isLoading } = useSelector((state) => state.books);
     <div className="deletebook">
       <div>
         {error && <h2 className="error">{error}</h2>}
-        {isLoading && <h2 className="loading">Deleting book...</h2>}
+        {isLoading && (
+            <img className="deleting"
+              src="assetsFront/images/deleting.gif"
+              alt="isLoading"
+            />
+          )}
         <h1>Delete Movie</h1>
         <form onSubmit={handleSubmit(removeBook)}>
           <select name="_id" {...register("_id")}>

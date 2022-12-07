@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // import swal from "sweetalert";
 import ReusableButton from "../components/Button";
+import { catchBook, dropBook } from "../redux/books/books.functions";
 import {
   deleteCheckpoint,
   getOneCheckpoint,
@@ -16,6 +17,9 @@ const CheckpointDetail = () => {
   const { checkpoint, checkpoints, isLoading, error } = useSelector(
     (state) => state.checkpoints
   );
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  console.log(checkpoint);
   const checkpointBooks = checkpoint.books;
 
   useEffect(() => {
@@ -26,23 +30,27 @@ const CheckpointDetail = () => {
   return (
     <div className="checkpoint--detail">
       <div className="title">
-      <div className="back--btn">
-        <Link to="/checkpoints">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/8022/8022657.png"
-            alt="goback"
-          />
-        </Link>
-      </div>
+        <div className="back--btn">
+          <Link to="/checkpoints">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/8022/8022657.png"
+              alt="goback"
+            />
+          </Link>
+        </div>
       </div>
       {isLoading && (
-        <img src="assetsFront/images/book-90.gif" alt="loading" />
+        <img
+          src="assetsFront/images/loading.gif"
+          alt="loading"
+          className="loading"
+        />
       )}
       {error && error.message}
       {checkpoint && (
         <div className="checkpoint--info">
-          <div className="checkpoint--card">    
-              <img src={checkpoint.img} alt={checkpoint.name} />         
+          <div className="checkpoint--card">
+            <img src={checkpoint.img} alt={checkpoint.name} />
           </div>
           <div className="checkpoint--card--info">
             <p>
@@ -91,6 +99,21 @@ const CheckpointDetail = () => {
                       <h4>Title: {checkpointBook.title}</h4>
                       <p>Author: {checkpointBook.author}</p>
                     </div>
+                    <button
+                      onClick={() =>
+                        dispatch(
+                          catchBook(
+                            checkpoint._id,
+                            checkpointBook._id,
+                            user._id,
+                            checkpoint.name,
+                            navigate
+                          )
+                        )
+                      }
+                    >
+                      Catch Book
+                    </button>
                   </div>
                 );
               })}
@@ -119,6 +142,22 @@ const CheckpointDetail = () => {
             </Link>
           }
         />
+        {user && <button
+          onClick={() =>
+            dispatch(
+              dropBook(
+                checkpoint._id,
+                user.book._id,
+                user._id,
+                checkpoint,
+                checkpoint.name,
+                navigate
+              )
+            )
+          }
+        >
+          <img src={user.book?.img} alt={user.book?.title} />
+        </button>}
       </div>
     </div>
   );

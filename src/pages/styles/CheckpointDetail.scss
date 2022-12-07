@@ -5,6 +5,7 @@
   .back--btn {
     img {
       width: 50px;
+      margin-bottom: 10px;
 
       &:hover {
         transform: scale(1.03);
@@ -69,6 +70,7 @@
       }
     }
     .delete--btn {
+      cursor: pointer;
       background-color: rgba(255, 255, 255, 0.867);
     }
     .update--btn {
