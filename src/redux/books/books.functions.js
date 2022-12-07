@@ -73,7 +73,7 @@ export const deleteBook = (id, navigate) => async (dispatch) => {
 };
 
 export const catchBook =
-  (checkpointId, bookId, userId, checkpointName, navigate) =>
+  (checkpointId, bookId, userId, checkpointName, checkpoint, navigate) =>
   async (dispatch) => {
     dispatch({ type: "catchingBook" });
     try {
@@ -82,7 +82,8 @@ export const catchBook =
       const books = checkpoint.data.books;
       const indexToDelete = books.indexOf(bookId);
       books.splice(indexToDelete, 1);
-      const newBooks = { books: books };
+      console.log(checkpoint);
+      const newBooks = {books: books, location: {coordinates: checkpoint.data.location.coordinates}};;
       await API.put("/checkpoints/edit/" + checkpointId, newBooks);
       dispatch(getOneCheckpoint(checkpointName));
 

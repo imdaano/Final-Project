@@ -107,6 +107,7 @@ const CheckpointDetail = () => {
                             checkpointBook._id,
                             user._id,
                             checkpoint.name,
+                            checkpoint,
                             navigate
                           )
                         )

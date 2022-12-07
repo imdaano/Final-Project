@@ -34,7 +34,7 @@ export const postNewCheckpoint = (dataForm, navigate) => async (dispatch) => {
     // res.data.inFavorites = false;
     // checkpoints.push(res.data); //dudas
     console.log(res);
-    dispatch({ type: "postCheckpoint" });
+    dispatch({ type: "postCheckpoint", payload: res.data });
     navigate(`/checkpoints/${res.data.name}`)
   } catch (error) {
     dispatch({ type: "errorPostCheckpoint", payload: error });
