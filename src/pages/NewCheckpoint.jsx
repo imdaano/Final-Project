@@ -19,14 +19,9 @@ const NewCheckpoint = () => {
   const postCheckpoint = (dataForm) => {
     const formData = new FormData();
     formData.append("name", dataForm.name);
-    formData.append("img", dataForm.img);
-    formData.append(
-      "location",
-      JSON.stringify({
-        type: "Point",
-        coordinates: [dataForm.latitud, dataForm.longitud],
-      })
-    );
+    formData.append("img", dataForm.img[0]);
+    formData.append("type", "Point");
+    formData.append("coordinates", JSON.stringify([dataForm.latitud, dataForm.longitud]));
     formData.append("address", dataForm.address);
     formData.append("phone", dataForm.phone);
     console.log();
@@ -37,7 +32,7 @@ const NewCheckpoint = () => {
     <div className="create">
       <div className="container">
         <h1>New Checkpoint</h1>
-        <form onSubmit={handleSubmit(postCheckpoint)}>
+        <form onSubmit={handleSubmit(postCheckpoint)} encType="multipart/form-data">
           <label>
             Name
             <input
