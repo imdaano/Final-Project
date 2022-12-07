@@ -16,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { error, isLoading } = useSelector((state) => state.auth);
   const login = (formdata) => {
-    loginUser(formdata, navigate, dispatch);
+    dispatch(loginUser(formdata, navigate));
   };
 
   return (
@@ -75,7 +75,7 @@ const Login = () => {
               )}
             </>
           ) : null}
-          <ReusableButton text={"Submit"} />
+          <button type="submit">Enviar</button>
         </form>
         <div className="navigate">
           <p>New in Travelling Books? </p>

@@ -44,8 +44,8 @@ const authReducer = (state = INITIAL_STATE, action) => {
 				return { ...INITIAL_STATE };
 			case "logout_user_error":
 				return { ...state, isLoading: false, error: action.payload };
-			
-
+		case "update_user": 
+				return {...state, user: action.payload}	
 		case "checkSession_start":
 			return { ...state, isLoading: true, error: false };
 		case "checkSession_ok":

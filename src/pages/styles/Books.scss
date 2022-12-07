@@ -10,7 +10,8 @@
     position: relative;
 
     .title {
-      color: rgb(5, 177, 196);
+      font-size: 25px;
+      color: rgba(252, 252, 252, 0.971);
       background-color: rgba(16, 62, 95, 0.919);
       height: 75px;
       // position: fixed;
@@ -28,21 +29,26 @@
       flex-wrap: wrap;
       justify-content: center;
 
+      .loading {
+        width: 150px;
+      }
+
       .book_card {
         color: rgb(0, 0, 0);
         width: 168px;
         height: 220px;
         // padding-inline: 2px;
-        background-color: rgba(13, 85, 136, 0.622);
+        background-color: rgb(119, 137, 243);
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
         align-items: center;
         margin: 5px;
-        border-radius: 20px;
+        border-radius: 10px;
 
         h2 {
+          color: whitesmoke;
           font-size: 12px;
         }
 
@@ -50,23 +56,28 @@
           width: 100px;
           height: 130px;
           padding: 1rem;
-          border-radius: 30px;
+          border-radius: 20px;
         }
         .book--btn {
           width: 80px;
           height: 20px;
-          border-radius: 10px;
+          border-radius: 5px;
           font-family: sans-serif;
           background-color: rgb(255, 255, 255);
+          border: none;
           cursor: pointer;
 
           a {
             text-decoration: none;
             color: black;
+
+            &:hover {
+              color: whitesmoke;
+            }
           }
 
           &:hover {
-            background: rgba(0, 0, 0, 0.541);
+            background: rgba(2, 31, 118, 0.541);
             color: white;
           }
         }

@@ -19,7 +19,8 @@ export const loginUser = (formdata, navigate) => async dispatch => {
 		localStorage.setItem("token", res.data.token);
 		navigate("/");
 	} catch (error) {
-		dispatch({ type: "login_user_error", payload: error.response.data });
+		console.log(error);
+		//dispatch({ type: "login_user_error", payload: error.response.data });
 	}
 };
 
@@ -37,14 +38,17 @@ export const getUserById = (id) => async (dispatch) => {
 
 export const checkSession = (token, navigate) => async dispatch => {
 	dispatch({ type: "checkSession_start" });
+	console.log("hola");
 	try {
 		const res = await API.post("users/checkSession");
+		console.log(res.data);
 		dispatch({
 			type: "checkSession_ok",
 			payload: { user: res.data, token: token },
 		});
 		navigate("/");
 	} catch (error) {
+		console.log(error);
 		dispatch({ type: "checkSession_error", payload: error.response.data });
 		localStorage.removeItem("token");
 		navigate("/login");

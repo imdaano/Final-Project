@@ -28,7 +28,7 @@ const BookInfo = () => {
         </Link>
       </div>
       {isLoading && (
-        <img src="../../public/assetsFront/images/book-90.gif" alt="loading" />
+        <img src="../../public/assetsFront/images/loading.gif" alt="loading" />
       )}
       {error && error.message}
       {book && (
