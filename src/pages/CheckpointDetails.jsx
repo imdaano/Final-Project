@@ -17,7 +17,7 @@ const CheckpointDetail = () => {
   const { checkpoint, checkpoints, isLoading, error } = useSelector(
     (state) => state.checkpoints
   );
-  const { user } = useSelector((state) => state.auth);
+  const { user, token} = useSelector((state) => state.auth);
   const navigate = useNavigate();
   console.log(checkpoint);
   const checkpointBooks = checkpoint.books;
@@ -134,6 +134,10 @@ const CheckpointDetail = () => {
           // }}
           text={<img src="/assetsFront/images/delete.png" alt="delete" />}
         />
+        {token && (
+          <>
+            {user.rol === "admin" && (
+              <>
         <ReusableButton
           clase={"update--btn"}
           text={
@@ -142,6 +146,11 @@ const CheckpointDetail = () => {
             </Link>
           }
         />
+
+              </>
+            )}
+          </>
+        )}
         {user && <button
           onClick={() =>
             dispatch(

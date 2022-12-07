@@ -19,7 +19,7 @@ const Books = () => {
           <div className="container--cards">
             {isLoading && (
               <img
-                src="../../public/assetsFront/images/loading.gif"
+                src="/assetsFront/images/loading.gif"
                 alt="loading"
                 className="loading"
               />

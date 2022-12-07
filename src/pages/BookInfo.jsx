@@ -54,21 +54,21 @@ const BookInfo = () => {
         </div>
       )}
       {token && (
-        <>
+        <div className="buttons">
           {user.rol === "admin" && (
             <>
               <ReusableButton
-                clase={"delete--btn"}
+                clase={"down--btn"}
                 click={() => dispatch(deleteBook(book._id, dispatch))}
                 text={"Delete"}
               />
               <ReusableButton
-                clase={"update--btn"}
+                clase={"down--btn"}
                 text={<Link to={"/editBook"}>Actualizar</Link>}
               />
             </>
           )}
-        </>
+        </div>
       )}
       <div className="action--btns"></div>
     </div>

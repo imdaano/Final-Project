@@ -8,7 +8,7 @@ const Create = () => {
   const [show, setShow] = useState("newbook");
 
   return (
-    <div className="create">
+    <div className="createform">
     <div className='button--box'>
         <button onClick={() => setShow("newbook")}>New Book</button>
         <button onClick={() => setShow("newcheckpoint")}>New Checkpoint</button>

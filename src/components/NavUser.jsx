@@ -5,13 +5,6 @@ import "./styles/NavUser.scss";
 const NavUser = () => {
   return (
     <div className="nav-user">
-      <Link to="/">
-        <img
-          className="logo"
-          src="./src/assets/iconsNav/TravellingBooks.png"
-          alt="logo"
-        />
-      </Link>
       <Link to="/users">
         <img
           className="users"
