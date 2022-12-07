@@ -17,7 +17,7 @@ const CheckpointDetail = () => {
   const { checkpoint, checkpoints, isLoading, error } = useSelector(
     (state) => state.checkpoints
   );
-  const { user, token} = useSelector((state) => state.auth);
+  const { user, token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   console.log(checkpoint);
   const checkpointBooks = checkpoint.books;
@@ -122,52 +122,47 @@ const CheckpointDetail = () => {
         </div>
       )}
       <div className="action--btns">
-        <ReusableButton
-          clase={"delete--btn"}
-          click={() => dispatch(deleteCheckpoint(checkpoint._id))}
-          // click={() => {
-          //   const function1 = dispatch(
-          //     deleteCheckpoint(checkpoint._id)
-          //   );
-          //   const function2 = deleteAlert();
-          //   function1();
-          //   function2();
-          // }}
-          text={<img src="/assetsFront/images/delete.png" alt="delete" />}
-        />
         {token && (
           <>
             {user.rol === "admin" && (
               <>
-        <ReusableButton
-          clase={"update--btn"}
-          text={
-            <Link to={"/editCheckpoint"}>
-              <img src="/assetsFront/images/update.png" alt="update" />
-            </Link>
-          }
-        />
-
+                <ReusableButton
+                  clase={"delete--btn"}
+                  click={() => dispatch(deleteCheckpoint(checkpoint._id))}
+                  text={
+                    <img src="/assetsFront/images/delete.png" alt="delete" />
+                  }
+                />
+                <ReusableButton
+                  clase={"update--btn"}
+                  text={
+                    <Link to={"/editCheckpoint"}>
+                      <img src="/assetsFront/images/update.png" alt="update" />
+                    </Link>
+                  }
+                />
               </>
             )}
           </>
         )}
-        {user && <button
-          onClick={() =>
-            dispatch(
-              dropBook(
-                checkpoint._id,
-                user.book._id,
-                user._id,
-                checkpoint,
-                checkpoint.name,
-                navigate
+        {user && (
+          <button
+            onClick={() =>
+              dispatch(
+                dropBook(
+                  checkpoint._id,
+                  user.book._id,
+                  user._id,
+                  checkpoint,
+                  checkpoint.name,
+                  navigate
+                )
               )
-            )
-          }
-        >
-          <img src={user.book?.img} alt={user.book?.title} />
-        </button>}
+            }
+          >
+            <img src={user.book?.img} alt={user.book?.title} />
+          </button>
+        )}
       </div>
     </div>
   );
