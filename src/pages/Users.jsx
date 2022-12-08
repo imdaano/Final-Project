@@ -27,8 +27,8 @@ const Users = () => {
       {token && (
         <>
           <div className="button--box">
-            <button onClick={() => setShow("myaccount")}>My Account</button>
-            <button onClick={() => setShow("logout")}>Log Out</button>
+            <button className="styled" onClick={() => setShow("myaccount")}>My Account</button>
+            <button className="styled" onClick={() => setShow("logout")}>Log Out</button>
           </div>
           <div>
             {show === "myaccount" && <MyAccount/>}

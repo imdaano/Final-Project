@@ -51,6 +51,26 @@
       .checkbooks--container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+
+        .checkbooks--info{
+          border-top: 1px solid black;
+          h4 {
+            font-weight: bold;
+          }
+        }
+
+
+        button {
+          border-radius: 10px;
+          border: none;
+          width: 50px;
+          
+        }
+        img {
+          width: 35px;
+          height: 35px;
+        }
       }
     }
   }

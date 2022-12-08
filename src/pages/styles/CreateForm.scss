@@ -5,10 +5,13 @@
   text-align: center;
 
   .container {
-    padding: 20px;
+    padding: 20px 20px 150px 20px;
     background: rgba(255, 255, 255, 0.914);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+    margin-right: 30px;
+    
+    
 
     .back {
       display: flex;

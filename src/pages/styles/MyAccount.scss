@@ -5,9 +5,9 @@
   align-items: center;
 
   .card {
+    width: 240px;
     text-align: center;
-    width: 300px;
-    height: 400px;
+    height: 450px;
     padding: 20px;
     line-height: 2;
     color: whitesmoke;
@@ -17,7 +17,7 @@
 
     img {
       border: solid 2px white;
-      border-radius: 50%;
+      border-radius: 5%;
     }
 
     .info {
@@ -25,8 +25,16 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-    }
 
+    }
+    
+    .book {
+      img {
+        width: 100px;
+        
+       
+      }
+    }
     &:hover {
       transform: scale(1.03);
       color: black;

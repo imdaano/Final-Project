@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className="app">
+      <div className="bg-overlay"></div>
       <NavUser />
       <main className="app--main">
         <Routes>
