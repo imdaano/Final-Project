@@ -3,19 +3,37 @@
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  z-index: 1;
-  height: 80px;
-  width: 100%;
+  z-index: 20;
+  height: 50px;
+  width: 80%;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid black;
+  background-color: ivory;
+  opacity: 1;
+  border-radius: 20px;
+  margin: 0 auto;
+  left: 10%;
+  right: 10%;
+  top: 15px;
+
+  &__logo {
+    text-align: center;
+  }
+
+  svg {
+    width: 40% !important;
+  }
+
 
   a img {
     padding: 10px;
-    width: 50px;
+    width: 30px;
+    transform: scale(1);
+    transition-timing-function: ease-in;
+    transition: all 0.2s;
+
 
     &:hover {
-      transform: scale(1.02);
+      transform: scale(1.2);
     }
   }
 }

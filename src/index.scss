@@ -60,3 +60,28 @@ html, body {
 html, body, #root {
 	height: 100%;
 }
+
+button.styled {
+	background-color: #1877f2;
+	border: none;
+	border-radius: 6px;
+	color: #fff;
+	flex-grow: 1;
+	font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	height: 36px;
+	line-height: 20px;
+	margin-left: 8px;
+	margin-right: 6px;
+	min-width: 100px;
+	padding: 0 16px 0 16px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+button.styled:hover {
+	background-color: #e4e6eb;
+	color: #050505;
+	font-size: 15px;
+	transition: 0.3s;
+}

@@ -75,7 +75,7 @@ const Login = () => {
               )}
             </>
           ) : null}
-          <button type="submit">Enviar</button>
+          <button type="submit">SUBMIT</button>
         </form>
         <div className="navigate">
           <p>New in Travelling Books? </p>

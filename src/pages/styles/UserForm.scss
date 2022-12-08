@@ -1,102 +1,113 @@
 .users {
-  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-block: 50px;
+  // margin-block: 50px;
+  background: white;
+  width: 70%;
+  padding: 60px 10px;
+  border-radius: 20px;
+  opacity: 0.85;
+  align-items: center;
+  
+  
 
   .register-login {
-    //   margin-top: 30px;
-    width: 300px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-
-    .container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-
-      form {
-        display: flex;
-        flex-direction: column;
-        color: whitesmoke;
-
-        h1 {
-          font-size: 20px;
-          margin-bottom: 20px;
-          text-align: center;
-        }
-
-        label {
-          font-size: 14px;
-          display: flex;
-          flex-direction: column;
-
-          input {
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px 0;
-            font-size: 12px;
-            color: #fff;
-            margin-bottom: 30px;
-            border: none;
-            border-bottom: 1px solid #fff;
-            //   outline: none;
-            background: transparent;
-          }
-        }
-
-        a {
-          width: 100px;
-          color: blue;
-          cursor: pointer;
-        }
-
-        button {
-          width: 150px;
-          margin-top: 10px;
-          position: relative;
-          display: inline-block;
-          padding: 10px 20px;
-          color: #002c55;
-          background: rgba(245, 245, 245, 0.788);
-          font-size: 15px;
-          text-transform: uppercase;
-          transition: 0.5s;
-          letter-spacing: 4px;
-          border-radius: 10px;
-          cursor: pointer;
-
-          &:hover {
-            color: #ffffff;
-            background-color: #025aac;
-            border-color: whitesmoke;
-          }
-        }
-      }
+      //   margin-top: 30px;
+      width: 170px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin-left: 50px;
+      
       
 
-      .navigate {
-        padding-top: 30px;
-        display: flex;
-        color: whitesmoke;
-        letter-spacing: 1px;
+      .container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          
 
-        h2 {
-          color: transparent;
-        }
+          form {
+              display: flex;
+              flex-direction: column;
+              color: whitesmoke;
 
-        a {
-          text-decoration: none;
-          color: whitesmoke;
+              h1 {
+                  font-size: 20px;
+                  margin-bottom: 20px;
+                  text-align: center;
+              }
 
-          &:hover {
-            color: #1e62b5;
-            transform: scale(1.05);
+              label {
+                  font-size: 14px;
+                  display: flex;
+                  flex-direction: column;
+
+                  input {
+                      margin-top: 10px;
+                      width: 100%;
+                      padding: 10px 0;
+                      font-size: 12px;
+                      color: #fff;
+                      margin-bottom: 30px;
+                      border: none;
+                      border-bottom: 1px solid #fff;
+                      //   outline: none;
+                      background: transparent;
+                  }
+              }
+
+              a {
+                  width: 100px;
+                  color: blue;
+                  cursor: pointer;
+              }
+
+              button {
+                  width: 150px;
+                  margin-top: 10px;
+                  position: relative;
+                  display: inline-block;
+                  padding: 10px 20px;
+                  color: #002c55;
+                  background: rgba(245, 245, 245, 0.788);
+                  font-size: 15px;
+                  text-transform: uppercase;
+                  transition: 0.5s;
+                  letter-spacing: 4px;
+                  border-radius: 10px;
+                  cursor: pointer;
+
+                  &:hover {
+                      color: #ffffff;
+                      background-color: #025aac;
+                      border-color: whitesmoke;
+                  }
+              }
           }
-        }
+
+          .navigate {
+              padding-top: 30px;
+              display: flex;
+              color: whitesmoke;
+              letter-spacing: 1px;
+
+              h2 {
+                  color: transparent;
+              }
+
+              a {
+                  text-decoration: none;
+                  color: whitesmoke;
+
+                  &:hover {
+                      color: #1e62b5;
+                      transform: scale(1.05);
+                  }
+              }
+          }
       }
-    }
   }
 }

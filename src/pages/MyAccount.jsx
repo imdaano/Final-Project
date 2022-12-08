@@ -14,7 +14,7 @@ console.log(user);
         //CAMBIAR EL SCHEMA DEL BACK Y EL FORM DEL REGISTER EN EL FRONT
           src="https://pm1.narvii.com/6555/7ab2398321c4c5d2657922f401decc2df1192dab_hq.jpg"
           alt="img-profile"
-          width="200px"
+          width="120px"
         />
         <div className="info">
           <p>{user.name}</p>
